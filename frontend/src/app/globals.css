@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  /* Luxury Studio Editorial Palette */
+  --bg-canvas: #f8f8f5;
+  --bg-canvas-alt: #f1f1eb;
+  --bg-surface: #ffffff;
+
+  /* High-Contrast Obsidian & Charcoal Typography */
+  --text-primary: #090d15;
+  --text-secondary: #475569;
+  --text-muted: #7c8ba1;
+
+  /* Architectural Flame Coral Accent */
+  --coral-500: #fa4d56;
+  --coral-600: #e03b44;
+  --coral-50: #fef1f2;
+
+  /* Hairline Borders */
+  --border-hairline: #e2e2da;
+  --border-strong: #090d15;
+
+  /* Fonts */
+  --font-heading: var(--font-oswald), sans-serif;
+  --font-script: var(--font-caveat), cursive;
+  --font-body: var(--font-inter), sans-serif;
+  --font-editorial: var(--font-jakarta), var(--font-inter), sans-serif;
+}
+
+@theme inline {
+  --color-canvas: var(--bg-canvas);
+  --color-surface: var(--bg-surface);
+  --color-coral: var(--coral-500);
+  --font-heading: var(--font-oswald);
+  --font-script: var(--font-caveat);
+  --font-body: var(--font-inter);
+  --font-editorial: var(--font-jakarta);
+}
+
+.font-heading {
+  font-family: var(--font-oswald), "Oswald", sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-caveat), "Caveat", cursive;
+}
+
+.font-editorial {
+  font-family: var(--font-jakarta), var(--font-inter), sans-serif;
+}
+
+/* Base Body Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+}
+
+body {
+  background-color: #f8f8f5;
+  color: #090d15;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Studio Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4cb;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fa4d56;
+}
+
+/* Text Selection */
+::selection {
+  background: #fa4d56;
+  color: #ffffff;
+}
+
+/* Studio Card Utility — Reusable white elevated surface with precision border */
+.studio-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e2da;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.studio-card:hover {
+  border-color: #090d15;
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  transform: translateY(-2px);
+}
+
+/* Lenis Smooth Scroll Framework Overrides */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
