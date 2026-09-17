@@ -22,6 +22,7 @@ interface RevealAnimationProps {
   duration?: number;
   y?: number;
   once?: boolean;
+  start?: string;
 }
 
 /**
@@ -35,6 +36,7 @@ export default function RevealAnimation({
   duration = 0.8,
   y = 30,
   once = false,
+  start = "top 95%",
 }: RevealAnimationProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -59,7 +61,7 @@ export default function RevealAnimation({
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 92%",
+            start,
             toggleActions: once ? "play none none none" : "play reverse play reverse",
             once,
           },
@@ -73,7 +75,7 @@ export default function RevealAnimation({
     return () => {
       ctx.revert();
     };
-  }, [delay, duration, y, once]);
+  }, [delay, duration, y, once, start]);
 
   return (
     <div ref={ref} className={className}>
