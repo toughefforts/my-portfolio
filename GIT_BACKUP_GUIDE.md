@@ -6,7 +6,19 @@ Yeh file aapke portfolio project ke saare important checkpoint commits aur unke 
 
 ## 📌 Checkpoint History (Commits List)
 
-### 🟢 Checkpoint 2 (Latest - Services Section Complete)
+### 🟢 Checkpoint 3 (Latest - Education Section & Typography Standardization)
+- **Commit Hash:** `d43b222b93f52b87ddc3d9901bb6b07dc9aeabd2` (Short Hash: `d43b222`)
+- **Commit Message:** `feat: replace experience with education section, add qualification detail pages, and standardize typography`
+- **Date & Time:** Fri Oct 2 11:48:33 2026 +0530
+- **Summary:**
+  - Full Education section with realistic 3D laptop mockup and interactive qualification switcher.
+  - Dedicated qualification detail pages (`/education/[id]`) with curriculum modules, learning pillars, and official links.
+  - Navbar updated to place `EDUCATION` right after `SERVICES` with clean URLs.
+  - Typography completely standardized across all components according to Checkpoint 2 design system (Oswald bold uppercase headings, standard monospace tags/buttons, and clean Inter body copy).
+
+---
+
+### 🔵 Checkpoint 2 (Services Section Complete)
 - **Commit Hash:** `903ab660a3b3aae91f3ed07bf97312144929f43e` (Short Hash: `903ab66`)
 - **Commit Message:** `feat(services): complete services section with professional showcases, interactive dial hub, and balanced orbital layout`
 - **Date & Time:** Thu Sep 17 17:54:48 2026 +0530
