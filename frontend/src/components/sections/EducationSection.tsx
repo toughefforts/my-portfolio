@@ -166,31 +166,33 @@ export default function EducationSection() {
 
             {/* 3 Info Items with Red Outlined Icons */}
             <RevealAnimation delay={0.1}>
-              <div className="space-y-3 mb-5 text-xs">
+              <div className="space-y-3.5 mb-5 text-xs">
                 
                 {/* Duration */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-lg bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <Calendar className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block font-mono font-bold text-[#090d15] uppercase text-[10px] tracking-wider">
-                      Duration
+                    <span className="block font-mono font-bold text-[#7c8ba1] uppercase text-[9.5px] tracking-widest">
+                      DURATION
                     </span>
-                    <span className="text-xs text-[#64748b] font-medium">{slide.duration}</span>
+                    <span className="font-heading font-black text-[13.5px] sm:text-[14px] text-[#090d15] uppercase tracking-tight mt-0.5 block">
+                      {slide.duration}
+                    </span>
                   </div>
                 </div>
 
                 {/* Core Areas */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-lg bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <Layers className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block font-mono font-bold text-[#090d15] uppercase text-[10px] tracking-wider">
-                      Core Areas
+                    <span className="block font-mono font-bold text-[#7c8ba1] uppercase text-[9.5px] tracking-widest">
+                      CORE AREAS
                     </span>
-                    <span className="text-xs text-[#64748b] leading-tight block">
+                    <span className="font-heading font-bold text-[11.5px] sm:text-[12px] text-[#090d15] uppercase tracking-tight leading-snug mt-0.5 block">
                       {slide.coreAreas}
                     </span>
                   </div>
@@ -198,18 +200,18 @@ export default function EducationSection() {
 
                 {/* Live Preview */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-lg bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <Link2 className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block font-mono font-bold text-[#090d15] uppercase text-[10px] tracking-wider">
-                      Live Preview
+                    <span className="block font-mono font-bold text-[#7c8ba1] uppercase text-[9.5px] tracking-widest">
+                      LIVE PREVIEW
                     </span>
                     <a
                       href={slide.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-[#fa4d56] hover:underline inline-flex items-center gap-1 font-semibold"
+                      className="font-mono font-bold text-[11px] sm:text-[11.5px] text-[#fa4d56] hover:text-[#090d15] uppercase tracking-wider inline-flex items-center gap-1.5 transition-colors mt-0.5"
                     >
                       <span>{slide.livePreview}</span>
                       <ExternalLink className="w-3 h-3" />

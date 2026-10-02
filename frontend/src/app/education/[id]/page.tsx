@@ -171,29 +171,29 @@ export default function EducationDetailPage({
                 </div>
 
                 {/* Spec List */}
-                <div className="space-y-3 text-xs border-t border-[#f1f1eb] pt-4 mb-6">
+                <div className="space-y-3.5 text-xs border-t border-[#f1f1eb] pt-4 mb-6">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[10.5px] uppercase font-bold text-[#64748b] flex items-center gap-1.5">
+                    <span className="font-mono text-[10px] uppercase font-bold text-[#7c8ba1] flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5 text-[#fa4d56]" />
-                      Duration:
+                      DURATION:
                     </span>
-                    <span className="font-medium text-[#090d15]">{slide.duration}</span>
+                    <span className="font-heading font-black text-sm text-[#090d15] uppercase tracking-tight">{slide.duration}</span>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[10.5px] uppercase font-bold text-[#64748b] flex items-center gap-1.5">
+                    <span className="font-mono text-[10px] uppercase font-bold text-[#7c8ba1] flex items-center gap-1.5">
                       <Layers className="w-3.5 h-3.5 text-[#fa4d56]" />
-                      Format:
+                      FORMAT:
                     </span>
-                    <span className="font-medium text-[#090d15]">Full Curriculum</span>
+                    <span className="font-heading font-bold text-xs text-[#090d15] uppercase tracking-tight">Full Curriculum</span>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[10.5px] uppercase font-bold text-[#64748b] flex items-center gap-1.5">
+                    <span className="font-mono text-[10px] uppercase font-bold text-[#7c8ba1] flex items-center gap-1.5">
                       <Globe className="w-3.5 h-3.5 text-[#fa4d56]" />
-                      Portal:
+                      PORTAL:
                     </span>
-                    <span className="font-medium text-[#090d15]">{slide.livePreview}</span>
+                    <span className="font-mono text-xs font-bold text-[#090d15]">{slide.livePreview}</span>
                   </div>
                 </div>
 
