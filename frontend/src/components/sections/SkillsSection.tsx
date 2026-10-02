@@ -7,17 +7,6 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="py-16 sm:py-20 border-b border-[#e2e2da] bg-[#f8f8f5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Section Index Header */}
-        <div className="flex items-center justify-between border-b border-[#e2e2da] pb-3 mb-12 font-mono text-xs uppercase tracking-widest text-[#7c8ba1]">
-          <div className="flex items-center gap-2">
-            <span>[06]</span>
-            <span>&bull;</span>
-            <span>STACK &bull; CORE COMPETENCIES</span>
-          </div>
-          <div>
-            <span>TECHNICAL SPECIFICATIONS</span>
-          </div>
-        </div>
 
         {/* Section Title with Cursive Accent */}
         <div className="relative mb-16">

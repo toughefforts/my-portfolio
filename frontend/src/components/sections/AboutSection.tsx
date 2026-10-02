@@ -227,7 +227,7 @@ export default function AboutSection() {
 
                 {/* Bio Paragraph */}
                 <RevealAnimation delay={0.1}>
-                  <p className="font-editorial text-sm sm:text-[15px] text-[#334155] leading-relaxed tracking-[-0.01em] pt-1 font-normal">
+                  <p className="text-sm sm:text-[15px] text-[#334155] leading-relaxed tracking-[-0.01em] pt-1 font-normal">
                     I&apos;m <strong className="font-bold text-[#090d15]">Sachin Sharma</strong>, a website developer passionate about building scalable backend systems, modern full-stack applications, and intelligent AI-powered solutions that turn ideas into impactful digital experiences.
                   </p>
                 </RevealAnimation>

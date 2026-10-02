@@ -27,6 +27,8 @@ export default function Header() {
       window.scrollTo({ top, behavior: "smooth" });
       window.history.pushState(null, "", href);
       setActiveSection(sectionId);
+    } else {
+      window.location.href = href;
     }
   };
 
