@@ -157,27 +157,27 @@ export default function EducationSection() {
               </p>
             </RevealAnimation>
 
-            {/* Description */}
+            {/* Description Paragraph under Title (Smaller & clean font) */}
             <RevealAnimation delay={0.08}>
-              <p className="text-[12.5px] sm:text-xs text-[#475569] leading-relaxed mb-4">
+              <p className="font-sans text-[11.5px] sm:text-[12px] text-[#64748b] leading-relaxed mb-4">
                 {slide.description}
               </p>
             </RevealAnimation>
 
-            {/* 3 Info Items with Red Outlined Icons */}
+            {/* 3 Info Items with Red Outlined Icons (Larger, more prominent font size) */}
             <RevealAnimation delay={0.1}>
-              <div className="space-y-3 mb-5 text-xs">
+              <div className="space-y-3.5 mb-5">
                 
                 {/* Duration */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-lg bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <Calendar className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block font-mono font-bold text-[#090d15] uppercase text-[10.5px] tracking-wider">
+                    <span className="block font-mono font-bold text-[#7c8ba1] uppercase text-[10px] tracking-widest">
                       DURATION
                     </span>
-                    <span className="text-[12.5px] sm:text-[13px] text-[#475569] block mt-0.5">
+                    <span className="font-sans text-[14px] sm:text-[14.5px] font-semibold text-[#090d15] block mt-0.5">
                       {slide.duration}
                     </span>
                   </div>
@@ -185,14 +185,14 @@ export default function EducationSection() {
 
                 {/* Core Areas */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-lg bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <Layers className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block font-mono font-bold text-[#090d15] uppercase text-[10.5px] tracking-wider">
+                    <span className="block font-mono font-bold text-[#7c8ba1] uppercase text-[10px] tracking-widest">
                       CORE AREAS
                     </span>
-                    <span className="text-[12.5px] sm:text-[13px] text-[#475569] leading-relaxed block mt-0.5">
+                    <span className="font-sans text-[13.5px] sm:text-[14px] font-semibold text-[#090d15] leading-snug block mt-0.5">
                       {slide.coreAreas}
                     </span>
                   </div>
@@ -200,21 +200,21 @@ export default function EducationSection() {
 
                 {/* Live Preview */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-md bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-lg bg-[#fee2e2] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                     <Link2 className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block font-mono font-bold text-[#090d15] uppercase text-[10.5px] tracking-wider">
+                    <span className="block font-mono font-bold text-[#7c8ba1] uppercase text-[10px] tracking-widest">
                       LIVE PREVIEW
                     </span>
                     <a
                       href={slide.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[12.5px] sm:text-[13px] text-[#fa4d56] hover:underline font-medium inline-flex items-center gap-1 mt-0.5"
+                      className="font-sans text-[13.5px] sm:text-[14px] text-[#fa4d56] hover:text-[#090d15] font-semibold underline-offset-2 hover:underline inline-flex items-center gap-1.5 transition-colors mt-0.5"
                     >
                       <span>{slide.livePreview}</span>
-                      <ExternalLink className="w-3 h-3" />
+                      <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
