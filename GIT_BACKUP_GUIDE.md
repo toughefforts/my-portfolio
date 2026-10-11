@@ -6,7 +6,21 @@ Yeh file aapke portfolio project ke saare important checkpoint commits aur unke 
 
 ## 📌 Checkpoint History (Commits List)
 
-### 🟢 Checkpoint 3 (Latest - Education Section & Typography Standardization)
+### 🟢 Checkpoint 4 (Latest - Modern Footer Redesign & Direct Contact Details)
+- **Commit Hash:** `d560286f66903ea35ad6e821ba64a1d71e1ec336` (Short Hash: `d560286`)
+- **Commit Message:** `feat(footer): redesign modern footer with mountain illustration, interactive origami card, and update direct contact details`
+- **Date & Time:** Sun Oct 11 11:38:03 2026 +0530
+- **Summary:**
+  - Modern, responsive 4-column footer architecture with rich visual hierarchy.
+  - Custom Mountain landscape illustration banner with glowing red sunrise gradient & dynamic counters (99.4% CSAT, 50+ Projects).
+  - Social media pill buttons (GitHub, LinkedIn, Instagram, X/Twitter, etc.) with clean micro-interactions and animated arrow indicators.
+  - Interactive dark "Let's Connect" card featuring a 3D red paper airplane, ambient radial glowing corner, looping dotted flight swirl trail, and smooth scroll trigger to Contact section.
+  - Direct contact details updated across footer, Contact section, and CTA section (`officialsachin9910@gmail.com` and `+91 88102 27281`).
+  - Right-aligned bottom legal and utility links (`Privacy Policy`, `Terms of Service`, `SiteMap`).
+
+---
+
+### 🔵 Checkpoint 3 (Education Section & Typography Standardization)
 - **Commit Hash:** `d43b222b93f52b87ddc3d9901bb6b07dc9aeabd2` (Short Hash: `d43b222`)
 - **Commit Message:** `feat: replace experience with education section, add qualification detail pages, and standardize typography`
 - **Date & Time:** Fri Oct 2 11:48:33 2026 +0530
@@ -44,12 +58,12 @@ Yeh file aapke portfolio project ke saare important checkpoint commits aur unke 
 
 ## 🛠️ Undo / Restore Commands (Scenarios)
 
-### Scenario 1: Agar aap Checkpoint 2 (Services Complete) par wapas aana chahte hain
-Agar aapne kuch naye experimental changes kiye aur aap chahte hain ki wapas Services complete wali state (`903ab66`) pe aa jayein:
+### Scenario 1: Agar aap Checkpoint 4 (Footer Redesign) par wapas aana chahte hain
+Agar aapne kuch naye experimental changes kiye aur aap chahte hain ki wapas Footer complete wali state (`d560286`) pe aa jayein:
 
 ```bash
-# Saare modified files ke changes discard karke Checkpoint 2 pe revert karein
-git reset --hard 903ab66
+# Saare modified files ke changes discard karke Checkpoint 4 pe revert karein
+git reset --hard d560286
 
 # Agar koi nayi untracked files banayi hon to unhe bhi clean karein
 git clean -fd
@@ -57,7 +71,27 @@ git clean -fd
 
 ---
 
-### Scenario 2: Agar aap Checkpoint 1 (Initial Snapshot) par wapas jaana chahte hain
+### Scenario 2: Agar aap Checkpoint 3 (Education Section) par wapas aana chahte hain
+Agar aap Education section wali baseline state (`d43b222`) pe revert karna chahte hain:
+
+```bash
+git reset --hard d43b222
+git clean -fd
+```
+
+---
+
+### Scenario 3: Agar aap Checkpoint 2 (Services Complete) par wapas aana chahte hain
+Agar aap wapas Services complete wali state (`903ab66`) pe aana chahte hain:
+
+```bash
+git reset --hard 903ab66
+git clean -fd
+```
+
+---
+
+### Scenario 4: Agar aap Checkpoint 1 (Initial Snapshot) par wapas jaana chahte hain
 Agar aapko pehle wali initial baseline state (`7d9d292`) pe poora project revert karna ho:
 
 ```bash
@@ -69,28 +103,28 @@ git clean -fd
 
 ---
 
-### Scenario 3: Kisi Commit ko bina delete kiye safe mode me check karna (Safe View Mode)
+### Scenario 5: Kisi Commit ko bina delete kiye safe mode me check karna (Safe View Mode)
 Agar aap purane commit ko check out karke dekhna chahte hain bina current work ko delete kiye:
 
 ```bash
-# Checkpoint 1 ko check out karke test karein
-git checkout 7d9d292
+# Checkpoint 4 ko check out karke test karein
+git checkout d560286
 
-# Wapas latest state (Checkpoint 2 / main) par aane ke liye
+# Wapas latest state (main) par aane ke liye
 git checkout main
 ```
 
 ---
 
-### Scenario 4: Sirf ek specific file ko kisi commit se restore karna
+### Scenario 6: Sirf ek specific file ko kisi commit se restore karna
 Agar poora project nahi balki sirf ek particular file ko kisi commit se restore karna ho:
 
 ```bash
-# ServicesSection.tsx ko Checkpoint 2 wali state me restore karne ke liye
-git checkout 903ab66 -- frontend/src/components/sections/ServicesSection.tsx
+# Footer.tsx ko Checkpoint 4 wali state me restore karne ke liye
+git checkout d560286 -- frontend/src/components/layout/Footer.tsx
 
-# Ya HeroSection.tsx ko Checkpoint 1 wali state me restore karne ke liye
-git checkout 7d9d292 -- frontend/src/components/sections/HeroSection.tsx
+# Ya ServicesSection.tsx ko Checkpoint 2 wali state me restore karne ke liye
+git checkout 903ab66 -- frontend/src/components/sections/ServicesSection.tsx
 ```
 
 ---
@@ -105,6 +139,15 @@ git checkout 7d9d292 -- frontend/src/components/sections/HeroSection.tsx
 | `git reset --hard HEAD` | Current uncommitted changes ko turant discard karke last commit pe le aayega. |
 | `git clean -fd` | Nayi untracked files aur folders ko delete karega. |
 | `git add . ; git commit -m "your message"` | Future me naya checkpoint / commit banane ke liye (PowerShell). |
+
+---
+
+## 📂 Checkpoint 4 (Footer Redesign) Me Modified & New Files
+- `frontend/src/components/layout/Footer.tsx` (Complete 4-column modern redesign, mountain backdrop, origami plane card, social pills)
+- `frontend/public/images/footer-mountain.png` (Custom panoramic mountain landscape illustration)
+- `frontend/public/images/footer-plane.png` (3D red origami paper airplane asset)
+- `frontend/src/components/sections/ContactSection.tsx` (Updated email & phone numbers)
+- `frontend/src/components/sections/CtaSection.tsx` (Updated email)
 
 ---
 
