@@ -55,7 +55,7 @@ export default function CtaSection() {
               </a>
 
               <a
-                href="mailto:sachinsharma@awesome.com"
+                href="mailto:officialsachin9910@gmail.com"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#090d15] text-[#090d15] hover:bg-[#090d15] hover:text-white font-mono text-xs uppercase tracking-widest font-bold transition-colors"
               >
                 <span>Email Directly</span>

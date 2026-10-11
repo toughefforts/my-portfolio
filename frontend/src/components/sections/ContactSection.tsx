@@ -37,7 +37,7 @@ export default function ContactSection() {
       }
     } catch {
       setStatus("error");
-      setResponseMsg("Unable to send message right now. You can also reach me directly at sachinsharma@awesome.com");
+      setResponseMsg("Unable to send message right now. You can also reach me directly at officialsachin9910@gmail.com");
     }
   };
 
@@ -83,20 +83,20 @@ export default function ContactSection() {
                   <div className="py-4 space-y-1">
                     <div className="text-[#7c8ba1] uppercase tracking-widest text-[10px]">EMAIL ADDRESS</div>
                     <a
-                      href="mailto:sachinsharma@awesome.com"
+                      href="mailto:officialsachin9910@gmail.com"
                       className="text-sm font-bold text-[#090d15] hover:text-[#fa4d56] transition-colors block"
                     >
-                      sachinsharma@awesome.com
+                      officialsachin9910@gmail.com
                     </a>
                   </div>
 
                   <div className="py-4 space-y-1">
                     <div className="text-[#7c8ba1] uppercase tracking-widest text-[10px]">PHONE // WHATSAPP</div>
                     <a
-                      href="tel:+919096543310"
+                      href="tel:+918810227281"
                       className="text-sm font-bold text-[#090d15] hover:text-[#fa4d56] transition-colors block"
                     >
-                      +91 90965 43310
+                      +91 88102 27281
                     </a>
                   </div>
 
