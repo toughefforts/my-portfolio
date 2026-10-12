@@ -38,7 +38,7 @@ export default function HeroSection() {
     };
 
     img.onload = setupCanvas;
-    img.src = "/images/avatar.png";
+    img.src = "/images/hero/avatar.png";
     if (img.complete) {
       setupCanvas();
     }
@@ -236,7 +236,7 @@ export default function HeroSection() {
             
             {/* Base 3D Character Avatar */}
             <Image
-              src="/images/avatar.png"
+              src="/images/hero/avatar.png"
               alt="Sachin Sharma — 3D Character Avatar"
               fill
               priority
@@ -260,7 +260,7 @@ export default function HeroSection() {
             >
               {/* Skeleton X-Ray overlay */}
               <Image
-                src="/images/avatar-xray.png"
+                src="/images/hero/avatar-xray.png"
                 alt="Sachin Sharma — Avatar Skeleton X-Ray"
                 fill
                 priority

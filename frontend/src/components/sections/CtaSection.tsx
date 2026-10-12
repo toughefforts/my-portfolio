@@ -10,10 +10,6 @@ export default function CtaSection() {
         <div className="studio-card p-8 sm:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden">
           {/* Left Text */}
           <div className="space-y-4 max-w-2xl relative z-10">
-            <div className="font-mono text-xs uppercase tracking-widest text-[#7c8ba1] flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#fa4d56]" />
-              <span>[09] &bull; PROJECT INQUIRY</span>
-            </div>
 
             <div className="relative">
               <RevealAnimation>

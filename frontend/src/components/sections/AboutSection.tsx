@@ -152,7 +152,7 @@ export default function AboutSection() {
               {/* 3D Character Avatar Image */}
               <div className="relative w-full aspect-[425/595] z-10 flex items-end justify-center">
                 <Image
-                  src="/images/about-avatar.png"
+                  src="/images/about/about-avatar.png"
                   alt="Sachin Sharma — 3D Character Avatar"
                   fill
                   priority

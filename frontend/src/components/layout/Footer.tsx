@@ -110,7 +110,7 @@ export default function Footer() {
         {/* Mountain Landscape & Red Sun Image */}
         <div className="absolute left-0 bottom-0 w-full sm:w-[88%] md:w-[78%] lg:w-[68%] xl:w-[60%] max-w-[1100px] pointer-events-none select-none">
           <Image
-            src="/images/footer-mountain.png"
+            src="/images/footer/footer-mountain.png"
             alt="Mountain scenery"
             width={1200}
             height={480}
@@ -372,7 +372,7 @@ export default function Footer() {
               {/* Real 3D Red Paper Airplane Image Asset */}
               <div className="absolute top-2 right-2.5 w-14 h-14 pointer-events-none select-none z-10">
                 <Image
-                  src="/images/footer-plane.png"
+                  src="/images/footer/footer-plane.png"
                   alt="Paper plane"
                   width={80}
                   height={80}
