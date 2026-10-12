@@ -6,7 +6,21 @@ Yeh file aapke portfolio project ke saare important checkpoint commits aur unke 
 
 ## 📌 Checkpoint History (Commits List)
 
-### 🟢 Checkpoint 4 (Latest - Modern Footer Redesign & Direct Contact Details)
+### 🟢 Checkpoint 5 (Latest - Automated Gmail Inquiry Delivery & Asset Organization)
+- **Commit Hash:** `f520e596332df19a05e73ed1706d2ed061997b1c` (Short Hash: `f520e59`)
+- **Commit Message:** `feat(contact): implement automated Gmail inquiry forwarding and organize public image assets`
+- **Date & Time:** Mon Oct 12 11:19:39 2026 +0530
+- **Summary:**
+  - Automated inquiry forwarding via Nodemailer & Gmail SMTP direct to `officialsachin9910@gmail.com`.
+  - Formatted responsive HTML email template with sender name, email, subject, time, and 1-click replyTo header.
+  - Secure `.env.local` configuration for Google App Password (protected from git commits).
+  - Cleaned up redundant section index badges (`[09] • PROJECT INQUIRY`, `[08] • CASE STUDIES`, `[07] • TESTIMONIALS`) for a refined minimalist aesthetic.
+  - Organized all public image assets into dedicated section subfolders (`hero/`, `about/`, `projects/`, `testimonials/`, `blog/`, `footer/`, `education/`, `services/`, `contact/`) and updated all data models and UI component paths.
+  - Integrated interactive `WorldMapVisual` dot-matrix map for global reach visualization.
+
+---
+
+### 🔵 Checkpoint 4 (Modern Footer Redesign & Direct Contact Details)
 - **Commit Hash:** `d560286f66903ea35ad6e821ba64a1d71e1ec336` (Short Hash: `d560286`)
 - **Commit Message:** `feat(footer): redesign modern footer with mountain illustration, interactive origami card, and update direct contact details`
 - **Date & Time:** Sun Oct 11 11:38:03 2026 +0530
@@ -58,8 +72,21 @@ Yeh file aapke portfolio project ke saare important checkpoint commits aur unke 
 
 ## 🛠️ Undo / Restore Commands (Scenarios)
 
-### Scenario 1: Agar aap Checkpoint 4 (Footer Redesign) par wapas aana chahte hain
-Agar aapne kuch naye experimental changes kiye aur aap chahte hain ki wapas Footer complete wali state (`d560286`) pe aa jayein:
+### Scenario 1: Agar aap Checkpoint 5 (Automated Email & Asset Organization) par wapas aana chahte hain
+Agar aapne kuch naye experimental changes kiye aur aap chahte hain ki wapas Contact form automation & organized assets wali state (`f520e59`) pe aa jayein:
+
+```bash
+# Saare modified files ke changes discard karke Checkpoint 5 pe revert karein
+git reset --hard f520e59
+
+# Agar koi nayi untracked files banayi hon to unhe bhi clean karein
+git clean -fd
+```
+
+---
+
+### Scenario 2: Agar aap Checkpoint 4 (Footer Redesign) par wapas aana chahte hain
+Agar aap wapas Footer complete wali state (`d560286`) pe revert karna chahte hain:
 
 ```bash
 # Saare modified files ke changes discard karke Checkpoint 4 pe revert karein
@@ -139,6 +166,22 @@ git checkout 903ab66 -- frontend/src/components/sections/ServicesSection.tsx
 | `git reset --hard HEAD` | Current uncommitted changes ko turant discard karke last commit pe le aayega. |
 | `git clean -fd` | Nayi untracked files aur folders ko delete karega. |
 | `git add . ; git commit -m "your message"` | Future me naya checkpoint / commit banane ke liye (PowerShell). |
+
+---
+
+## 📂 Checkpoint 5 (Automated Email & Asset Organization) Me Modified & New Files
+- `frontend/src/app/api/contact/route.ts` (Nodemailer Gmail SMTP route handler with rich responsive HTML email template & replyTo support)
+- `frontend/public/images/{hero, about, projects, testimonials, blog, footer, education, contact}/` (Complete public asset directory reorganization into clean feature-based folders)
+- `frontend/src/data/projects.ts` (Updated to `/images/projects/...`)
+- `frontend/src/data/testimonials.ts` (Updated to `/images/testimonials/...`)
+- `frontend/src/data/blog-posts.ts` (Updated to `/images/blog/...`)
+- `frontend/src/components/sections/HeroSection.tsx` (Updated to `/images/hero/...`)
+- `frontend/src/components/sections/AboutSection.tsx` (Updated to `/images/about/...`)
+- `frontend/src/components/layout/Footer.tsx` (Updated to `/images/footer/...`)
+- `frontend/src/components/sections/BlogSection.tsx` (Cleaned up index header badge)
+- `frontend/src/components/sections/TestimonialsSection.tsx` (Cleaned up index header badge)
+- `frontend/src/components/sections/CtaSection.tsx` (Cleaned up index header badge)
+- `frontend/src/components/ui/WorldMapVisual.tsx` (Interactive global dot-matrix map visual)
 
 ---
 
