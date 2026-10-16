@@ -6,7 +6,22 @@ Yeh file aapke portfolio project ke saare important checkpoint commits aur unke 
 
 ## 📌 Checkpoint History (Commits List)
 
-### 🟢 Checkpoint 5 (Latest - Automated Gmail Inquiry Delivery & Asset Organization)
+### 🟢 Checkpoint 6 (Latest - Core Skills Panoramic Bonsai Tree & Interactive Tech Orbs)
+- **Commit Hash:** `d35351c958adfd2ffc5f0466d1d043f12a19d2f8` (Short Hash: `d35351c`)
+- **Commit Message:** `feat(skills): redesign core skills section with panoramic bonsai tech tree, glowing neon medallion orbs, and falling crimson leaves`
+- **Date & Time:** Fri Oct 16 19:42:33 2026 +0530
+- **Summary:**
+  - Redesigned Core Skills section with a master panoramic visual canvas seamlessly integrated over `#f8f8f5` ivory backdrop.
+  - Panoramic Bonsai tech tree banner (`core-skills-tree-banner.png`) on crimson roots with a subtle misty mountain horizon (`skills-mountain-horizon.png`).
+  - Organic falling crimson leaves animation drifting down from branches with 3 distinct keyframe swaying trajectories (`leafFallA`, `leafFallB`, `leafFallC`).
+  - 8 Interactive Tech Orbs positioned across foliage clusters (HTML5, CSS, JavaScript, Git, MySQL, Python, PHP, Django, GitHub).
+  - Dual compound-badge interaction: Default state displays a glowing circular neon medallion orb; hover smoothly expands a dark glassmorphic text tray displaying the skill label and description.
+  - Authentic vectors & logos: W3C HTML5/CSS3 shields, MySQL Sakila dolphin, Python PSF spec, Colin Viebrock official PHP logo vector, and GitHub/Git icons.
+  - Clean left typography column with red accent pill, monospace eyebrow `[MY TECH STACK]`, bold Oswald `CORE SKILLS` heading, and serif italic description.
+
+---
+
+### 🔵 Checkpoint 5 (Automated Gmail Inquiry Delivery & Asset Organization)
 - **Commit Hash:** `f520e596332df19a05e73ed1706d2ed061997b1c` (Short Hash: `f520e59`)
 - **Commit Message:** `feat(contact): implement automated Gmail inquiry forwarding and organize public image assets`
 - **Date & Time:** Mon Oct 12 11:19:39 2026 +0530
@@ -72,8 +87,21 @@ Yeh file aapke portfolio project ke saare important checkpoint commits aur unke 
 
 ## 🛠️ Undo / Restore Commands (Scenarios)
 
-### Scenario 1: Agar aap Checkpoint 5 (Automated Email & Asset Organization) par wapas aana chahte hain
-Agar aapne kuch naye experimental changes kiye aur aap chahte hain ki wapas Contact form automation & organized assets wali state (`f520e59`) pe aa jayein:
+### Scenario 1: Agar aap Checkpoint 6 (Core Skills Panoramic Tree & Tech Orbs) par wapas aana chahte hain
+Agar aapne kuch naye experimental changes kiye aur aap chahte hain ki wapas Core Skills wali state (`d35351c`) pe aa jayein:
+
+```bash
+# Saare modified files ke changes discard karke Checkpoint 6 pe revert karein
+git reset --hard d35351c
+
+# Agar koi nayi untracked files banayi hon to unhe bhi clean karein
+git clean -fd
+```
+
+---
+
+### Scenario 2: Agar aap Checkpoint 5 (Automated Email & Asset Organization) par wapas aana chahte hain
+Agar aap wapas Contact form automation & organized assets wali state (`f520e59`) pe revert karna chahte hain:
 
 ```bash
 # Saare modified files ke changes discard karke Checkpoint 5 pe revert karein
@@ -85,7 +113,7 @@ git clean -fd
 
 ---
 
-### Scenario 2: Agar aap Checkpoint 4 (Footer Redesign) par wapas aana chahte hain
+### Scenario 3: Agar aap Checkpoint 4 (Footer Redesign) par wapas aana chahte hain
 Agar aap wapas Footer complete wali state (`d560286`) pe revert karna chahte hain:
 
 ```bash
@@ -98,7 +126,7 @@ git clean -fd
 
 ---
 
-### Scenario 2: Agar aap Checkpoint 3 (Education Section) par wapas aana chahte hain
+### Scenario 4: Agar aap Checkpoint 3 (Education Section) par wapas aana chahte hain
 Agar aap Education section wali baseline state (`d43b222`) pe revert karna chahte hain:
 
 ```bash
@@ -108,7 +136,7 @@ git clean -fd
 
 ---
 
-### Scenario 3: Agar aap Checkpoint 2 (Services Complete) par wapas aana chahte hain
+### Scenario 5: Agar aap Checkpoint 2 (Services Complete) par wapas aana chahte hain
 Agar aap wapas Services complete wali state (`903ab66`) pe aana chahte hain:
 
 ```bash
@@ -118,7 +146,7 @@ git clean -fd
 
 ---
 
-### Scenario 4: Agar aap Checkpoint 1 (Initial Snapshot) par wapas jaana chahte hain
+### Scenario 6: Agar aap Checkpoint 1 (Initial Snapshot) par wapas jaana chahte hain
 Agar aapko pehle wali initial baseline state (`7d9d292`) pe poora project revert karna ho:
 
 ```bash
@@ -130,12 +158,12 @@ git clean -fd
 
 ---
 
-### Scenario 5: Kisi Commit ko bina delete kiye safe mode me check karna (Safe View Mode)
+### Scenario 7: Kisi Commit ko bina delete kiye safe mode me check karna (Safe View Mode)
 Agar aap purane commit ko check out karke dekhna chahte hain bina current work ko delete kiye:
 
 ```bash
-# Checkpoint 4 ko check out karke test karein
-git checkout d560286
+# Checkpoint 6 ko check out karke test karein
+git checkout d35351c
 
 # Wapas latest state (main) par aane ke liye
 git checkout main
@@ -143,10 +171,13 @@ git checkout main
 
 ---
 
-### Scenario 6: Sirf ek specific file ko kisi commit se restore karna
+### Scenario 8: Sirf ek specific file ko kisi commit se restore karna
 Agar poora project nahi balki sirf ek particular file ko kisi commit se restore karna ho:
 
 ```bash
+# SkillsSection.tsx ko Checkpoint 6 wali state me restore karne ke liye
+git checkout d35351c -- frontend/src/components/sections/SkillsSection.tsx
+
 # Footer.tsx ko Checkpoint 4 wali state me restore karne ke liye
 git checkout d560286 -- frontend/src/components/layout/Footer.tsx
 
@@ -166,6 +197,14 @@ git checkout 903ab66 -- frontend/src/components/sections/ServicesSection.tsx
 | `git reset --hard HEAD` | Current uncommitted changes ko turant discard karke last commit pe le aayega. |
 | `git clean -fd` | Nayi untracked files aur folders ko delete karega. |
 | `git add . ; git commit -m "your message"` | Future me naya checkpoint / commit banane ke liye (PowerShell). |
+
+---
+
+## 📂 Checkpoint 6 (Core Skills Redesign) Me Modified & New Files
+- `frontend/src/components/sections/SkillsSection.tsx` (Complete redesign with master panoramic visual canvas on `#f8f8f5`, bonsai tree, organic falling crimson leaves, and glowing tech medallion orbs)
+- `frontend/public/images/skills/core-skills-tree-banner.png` (High-resolution transparent panoramic bonsai tree with crimson foliage & roots)
+- `frontend/public/images/skills/skills-mountain-horizon.png` (Subtle misty mountain horizon backdrop)
+- `frontend/public/images/skills/php.svg` (Official Colin Viebrock PHP vector logo asset)
 
 ---
 
