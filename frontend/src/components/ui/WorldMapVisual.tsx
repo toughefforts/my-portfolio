@@ -146,23 +146,23 @@ export default function WorldMapVisual() {
         onMouseEnter={() => setActiveTooltip("Delhi, India")}
         onMouseLeave={() => setActiveTooltip(null)}
       >
-        {/* India Base Dot & Dashed Border (Exact match with other country dots) */}
+        {/* India Base Dot & Dashed Border (Green Hub) */}
         <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 flex items-center justify-center">
-          {/* Pulsing red ripple wave */}
+          {/* Pulsing green ripple wave */}
           <span
-            className="absolute -inset-1.5 rounded-full bg-[#fe3130]/15 animate-ping pointer-events-none"
+            className="absolute -inset-1.5 rounded-full bg-[#10b981]/20 animate-ping pointer-events-none"
             style={{ animationDuration: "3s" }}
           />
 
-          {/* Faded dashed circle border (Exact same gap / -inset-1) */}
-          <span className="absolute -inset-1 rounded-full border border-dashed border-[#fe3130]/50 pointer-events-none group-hover:scale-110 group-hover:border-[#fe3130]/80 transition-all duration-200" />
+          {/* Faded dashed circle border */}
+          <span className="absolute -inset-1 rounded-full border border-dashed border-[#10b981]/60 pointer-events-none group-hover:scale-110 group-hover:border-[#10b981] transition-all duration-200" />
 
-          {/* Solid Red Circle Dot (Exact same size w-1.5 h-1.5 sm:w-2 sm:h-2, pure red without white border) */}
-          <div className="relative w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#fe3130] shadow-[0_0_6px_rgba(254,49,48,0.8)]" />
+          {/* Solid Green Circle Dot */}
+          <div className="relative w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#10b981] shadow-[0_0_6px_rgba(16,185,129,0.9)]" />
         </div>
 
         {/* Red Location Symbol (Pin) - Compact & sleek */}
-        <div className="relative flex flex-col items-center mb-1 group-hover:-translate-y-0.5 transition-transform duration-200">
+        <div className="relative flex flex-col items-center mb-2 group-hover:-translate-y-0.5 transition-transform duration-200">
           <div className="w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#fe3130] text-white flex items-center justify-center shadow-[0_2px_8px_rgba(254,49,48,0.5)] border-[1.5px] border-white">
             <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-white text-[#fe3130]" />
           </div>

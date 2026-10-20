@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
       { source: "/education", destination: "/" },
       { source: "/services", destination: "/" },
       { source: "/projects", destination: "/" },
+      { source: "/skills", destination: "/" },
+      { source: "/testimonials", destination: "/" },
       { source: "/blog", destination: "/" },
       { source: "/contact", destination: "/" },
     ];

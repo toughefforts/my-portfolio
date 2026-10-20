@@ -6,6 +6,7 @@ import gsap from "gsap";
 import CounterAnimation from "@/components/animations/CounterAnimation";
 import RevealAnimation from "@/components/animations/RevealAnimation";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { scrollToCleanSection } from "@/lib/navigation";
 
 export default function HeroSection() {
   const heroLetterIRef = useRef<HTMLSpanElement>(null);
@@ -333,15 +334,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
               <a
                 href="/projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const el = document.getElementById("projects");
-                  if (el) {
-                    const top = el.getBoundingClientRect().top + window.scrollY - 80;
-                    window.scrollTo({ top, behavior: "smooth" });
-                    window.history.pushState(null, "", "/projects");
-                  }
-                }}
+                onClick={(e) => scrollToCleanSection("projects", e)}
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#090d15] text-white hover:bg-[#fa4d56] transition-colors font-mono text-xs uppercase tracking-wider font-bold shadow-xs cursor-pointer"
               >
                 <span>View Projects</span>
@@ -350,15 +343,7 @@ export default function HeroSection() {
 
               <a
                 href="/contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const el = document.getElementById("contact");
-                  if (el) {
-                    const top = el.getBoundingClientRect().top + window.scrollY - 80;
-                    window.scrollTo({ top, behavior: "smooth" });
-                    window.history.pushState(null, "", "/contact");
-                  }
-                }}
+                onClick={(e) => scrollToCleanSection("contact", e)}
                 className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#090d15] text-[#090d15] hover:bg-[#090d15] hover:text-white transition-colors font-mono text-xs uppercase tracking-wider font-bold cursor-pointer"
               >
                 <span>Let&apos;s Connect</span>

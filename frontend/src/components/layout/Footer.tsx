@@ -2,6 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { scrollToCleanSection } from "@/lib/navigation";
 import {
   Home,
   User,
@@ -36,6 +39,7 @@ const navItems = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -44,27 +48,16 @@ export default function Footer() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    e.preventDefault();
-    const sectionId = href === "/" ? "home" : href.replace("/", "");
-    const el = document.getElementById(sectionId);
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top, behavior: "smooth" });
-      window.history.pushState(null, "", href);
-    } else {
-      window.location.href = href;
-    }
+    scrollToCleanSection(href, e);
   };
 
   const scrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const el = document.getElementById("contact");
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top, behavior: "smooth" });
-      window.history.pushState(null, "", "#contact");
-    }
+    scrollToCleanSection("contact", e);
   };
+
+  if (pathname?.startsWith("/preview") || pathname?.startsWith("/under-construction")) {
+    return null;
+  }
 
   return (
     <footer className="relative bg-[#faf9f6] text-[#090d15] overflow-hidden border-t border-[#eae8e3]">
@@ -125,11 +118,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
           {/* ----------------- COLUMN 1: BRAND / BIO ----------------- */}
           <div className="lg:col-span-4 space-y-4">
-            {/* Title with Red Dot */}
-            <div className="flex items-center gap-3">
-              <span className="w-3.5 h-3.5 rounded-full bg-[#fa4d56] shrink-0 inline-block shadow-sm" />
-              <h2 className="font-heading font-black text-2xl sm:text-3xl tracking-tight text-[#090d15] uppercase">
-                SACHIN <span className="text-[#fa4d56]">SHARMA</span>
+            {/* Brand Logo with Overlapping Circles */}
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <svg
+                className="w-7 h-6 sm:w-8 sm:h-7 shrink-0"
+                viewBox="0 0 28 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="9" cy="9" r="7.5" fill="#090d15" />
+                <circle cx="18" cy="14" r="7.5" fill="#e02838" />
+              </svg>
+              <h2 className="font-heading font-black text-2xl sm:text-3xl tracking-tight uppercase leading-none">
+                <span className="text-[#090d15]">SACHIN</span>{" "}
+                <span className="text-[#e02838]">SHARMA</span>
               </h2>
             </div>
 
@@ -301,7 +303,7 @@ export default function Footer() {
 
               {/* Status Indicator / Opportunities Link */}
               <a
-                href="#contact"
+                href="/contact"
                 onClick={scrollToContact}
                 aria-label="Open to exciting opportunities - Contact me"
                 className="pt-3 border-t border-[#e2e8f0] flex items-center justify-between group cursor-pointer transition-all"
@@ -426,26 +428,26 @@ export default function Footer() {
         {/* Right-Aligned Compact Divider Line & Theme Links at Bottom */}
         <div className="mt-12 sm:mt-14 lg:mt-16 flex flex-col items-end relative z-10 translate-y-3.5 sm:translate-y-4.5">
           <div className="w-full max-w-[320px] sm:max-w-[380px] border-t border-[#e2e8f0] pt-2.5 pb-1 flex items-center justify-center gap-2.5 sm:gap-3.5 text-[#64748b]">
-            <a
-              href="#privacy"
+            <Link
+              href="/privacy-policy"
               className="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-wider font-semibold hover:text-[#fa4d56] transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
             <span className="text-[#cbd5e1] select-none text-[10px]">|</span>
-            <a
-              href="#terms"
+            <Link
+              href="/terms-of-service"
               className="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-wider font-semibold hover:text-[#fa4d56] transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
             <span className="text-[#cbd5e1] select-none text-[10px]">|</span>
-            <a
-              href="#sitemap"
+            <Link
+              href="/sitemap"
               className="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-wider font-semibold hover:text-[#fa4d56] transition-colors"
             >
               SiteMap
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -193,41 +193,25 @@ export default function AboutSection() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5 lg:gap-6 items-stretch">
               
               {/* Left Bio Info */}
-              <div className="md:col-span-7 flex flex-col justify-between space-y-3">
+              <div className="md:col-span-7 flex flex-col justify-start space-y-3 sm:space-y-3.5">
                 <div>
                   {/* Overline Label */}
                   <div className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-widest text-[#7c8ba1] mb-2">
-                    <span>GET TO KNOW ME</span>
                     <span className="w-8 h-[2px] bg-[#fa4d56]" />
+                    <span>GET TO KNOW ME</span>
                   </div>
 
-                  {/* Main Heading with Spark */}
+                  {/* Main Heading */}
                   <RevealAnimation>
-                    <div className="inline-flex items-center gap-2.5 sm:gap-3">
-                      <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase font-heading tracking-tight text-[#090d15] leading-none">
-                        ABOUT ME
-                      </h2>
-                      <span className="inline-flex items-center justify-center text-[#fa4d56] filter drop-shadow-[0_0_12px_rgba(250,77,86,0.55)] select-none hover:scale-115 hover:rotate-45 transition-transform duration-300 cursor-default">
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 text-[#fa4d56]"
-                        >
-                          <path d="M12 0C12.5 6 18 11.5 24 12C18 12.5 12.5 18 12 24C11.5 18 6 12.5 0 12C6 11.5 11.5 6 12 0Z" />
-                        </svg>
-                      </span>
-                    </div>
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase font-heading tracking-tight text-[#090d15] leading-none">
+                      ABOUT <span className="text-[#fa4d56]">ME</span>
+                    </h2>
                   </RevealAnimation>
-
-                  {/* Cursive Subtitle */}
-                  <p className="mt-1.5 text-xl sm:text-2xl font-script text-[#fa4d56] rotate-[-2deg] font-semibold">
-                    Engineering &bull; Vision &bull; Craftsmanship
-                  </p>
                 </div>
 
                 {/* Bio Paragraph */}
                 <RevealAnimation delay={0.1}>
-                  <p className="text-sm sm:text-[15px] text-[#334155] leading-relaxed tracking-[-0.01em] pt-1 font-normal">
+                  <p className="font-editorial text-sm sm:text-[15.5px] text-[#334155] leading-relaxed tracking-normal font-normal">
                     I&apos;m <strong className="font-bold text-[#090d15]">Sachin Sharma</strong>, a website developer passionate about building scalable backend systems, modern full-stack applications, and intelligent AI-powered solutions that turn ideas into impactful digital experiences.
                   </p>
                 </RevealAnimation>

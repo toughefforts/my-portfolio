@@ -17,6 +17,12 @@ export interface Project {
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
+  number?: string;
+  category?: string;
+  doodleText?: string;
+  badgeBg?: string;
+  badgeTextColor?: string;
+  accentColor?: string;
 }
 
 /**
@@ -50,6 +56,8 @@ export interface Testimonial {
   avatar: string;
   rating: number;
   quote: string;
+  companyName?: string;
+  companyType?: string;
 }
 
 /**
@@ -63,6 +71,55 @@ export interface BlogPost {
   image: string;
   excerpt: string;
   slug: string;
+}
+
+export interface ArticleSection {
+  heading: string;
+  subheading?: string;
+  paragraphs: string[];
+  keyHighlights?: string[];
+  quote?: string;
+  codeSnippet?: {
+    language: string;
+    code: string;
+    caption?: string;
+  };
+}
+
+export interface ArticleDetail {
+  id: string;
+  slug: string;
+  articleNumber: string;
+  title: string;
+  subtitle: string;
+  category: "DESIGN" | "DEVELOPMENT" | "UI/UX" | "ARCHITECTURE";
+  date: string;
+  readTime: string;
+  excerpt: string;
+  image: string;
+  categoryIcon: "code" | "layers" | "palette" | "monitor";
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+  metrics?: { label: string; value: string }[];
+  tags: string[];
+  sections: ArticleSection[];
+  gallery?: {
+    src: string;
+    title: string;
+    step: string;
+  }[];
+  sectionMedia?: string;
+  comparisonImages?: {
+    left: { src: string; title: string; desc: string };
+    right: { src: string; title: string; desc: string };
+  };
+  processImage?: {
+    src: string;
+    caption: string;
+  };
 }
 
 /**

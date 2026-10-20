@@ -461,7 +461,7 @@ export default function SkillsSection() {
 
             {/* Description Paragraph */}
             <RevealAnimation delay={0.2}>
-              <p className="font-serif italic text-[#64748b] text-xs sm:text-[12.5px] leading-relaxed max-w-[210px] sm:max-w-[250px]">
+              <p className="font-serif italic text-[#1e293b] text-xs sm:text-[13px] leading-relaxed max-w-[210px] sm:max-w-[250px]">
                 A strong foundation of modern technologies, enabling me to build scalable, high-performance and user-friendly digital solutions.
               </p>
             </RevealAnimation>

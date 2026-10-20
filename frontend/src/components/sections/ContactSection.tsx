@@ -112,7 +112,7 @@ export default function ContactSection() {
               </div>
 
               {/* Description Paragraph with left vertical divider line */}
-              <div className="max-w-[240px] sm:max-w-[210px] md:max-w-[230px] lg:max-w-[250px] border-l-2 border-[#e2e8da] pl-3.5 py-0.5 text-[#64748b] font-serif italic text-xs sm:text-[12.5px] leading-relaxed shrink-0 ml-auto sm:ml-4 lg:ml-6">
+              <div className="max-w-[240px] sm:max-w-[210px] md:max-w-[230px] lg:max-w-[250px] border-l-2 border-[#e2e8da] pl-3.5 py-0.5 text-[#1e293b] font-serif italic text-xs sm:text-[13px] leading-relaxed shrink-0 ml-auto sm:ml-4 lg:ml-6">
                 Have a project in mind, a question, or just want to say hello? I&apos;d love to
                 hear from you. Let&apos;s discuss how we can turn your ideas into reality.
               </div>

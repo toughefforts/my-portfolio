@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { educationSlides } from "@/data/education";
@@ -14,10 +14,51 @@ import {
   ArrowRight,
   ExternalLink,
 } from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function EducationSection() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [isLaptopOpen, setIsLaptopOpen] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasAutoOpenedRef = useRef(false);
+
   const slide = educationSlides[activeSlideIndex];
+
+  // ScrollTrigger: automatically lift and open the laptop when scrolling into view
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) {
+      setIsLaptopOpen(true);
+      return;
+    }
+
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 72%",
+        onEnter: () => {
+          if (!hasAutoOpenedRef.current) {
+            hasAutoOpenedRef.current = true;
+            setIsLaptopOpen(true);
+          }
+        },
+        onLeaveBack: () => {
+          // Reset when scrolling back above so user can experience the open lift again
+          hasAutoOpenedRef.current = false;
+          setIsLaptopOpen(false);
+        },
+      });
+    }, sectionRef);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
 
   const handlePrev = () => {
     setActiveSlideIndex((prev) =>
@@ -33,6 +74,7 @@ export default function EducationSection() {
 
   return (
     <section
+      ref={sectionRef}
       id="education"
       className="py-12 sm:py-16 border-b border-[#e2e2da] bg-[#f8f8f5] relative overflow-hidden select-none"
     >
@@ -41,7 +83,7 @@ export default function EducationSection() {
         {/* ========================================================
             TOP ROW (3 COLUMNS):
             Left: Headline, Narrative (~22%)
-            Center: Balanced Realistic Laptop Mockup (~56%)
+            Center: Balanced Realistic 3D Laptop Mockup (~56%)
             Right: Active Slide Metadata & Specs (~22%)
            ======================================================== */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-4 xl:gap-6">
@@ -54,8 +96,8 @@ export default function EducationSection() {
             {/* Category / Eyebrow */}
             <RevealAnimation>
               <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-[#7c8ba1] mb-3">
-                <span>EDUCATION</span>
                 <span className="w-8 h-[2px] bg-[#fa4d56]" />
+                <span>EDUCATION</span>
               </div>
             </RevealAnimation>
 
@@ -72,7 +114,7 @@ export default function EducationSection() {
 
             {/* Narrative Paragraph */}
             <RevealAnimation delay={0.08}>
-              <p className="text-[13px] sm:text-[13.5px] text-[#475569] leading-relaxed max-w-[290px]">
+              <p className="font-serif italic text-[#1e293b] text-xs sm:text-[13px] leading-relaxed max-w-[290px]">
                 A journey of continuous learning, curiosity and self-improvement. Each qualification has added a new perspective and helped me build the person I am today.
               </p>
             </RevealAnimation>
@@ -81,30 +123,20 @@ export default function EducationSection() {
 
           {/* ========================================================
               CENTER COLUMN (w-full lg:w-[54%] xl:w-[56%]):
-              Balanced Realistic Laptop Image Mockup on Stone Pedestal
+              Interactive 3D Opening / Closing Laptop on Stone Pedestal
              ======================================================== */}
           <div className="w-full lg:w-[54%] xl:w-[56%] flex flex-col items-center justify-center py-2 relative">
             
-            {/* Outer Laptop Container (Exact 1526/1030 Aspect Ratio to Match Mockup) */}
-            <div className="relative w-full max-w-[740px] sm:max-w-[780px] xl:max-w-[820px] aspect-[1526/1030] flex items-center justify-center">
+            {/* Outer Laptop Container with 3D Perspective */}
+            <div
+              className="relative w-full max-w-[740px] sm:max-w-[780px] xl:max-w-[820px] aspect-[1526/1030] flex items-center justify-center"
+              style={{ perspective: "1800px" }}
+            >
               
-              {/* Inner Active Screen Display Area (Width Expanded by additional 1px) */}
-              <div className="absolute top-[9.6%] left-[calc(14.7%-2.5px)] w-[calc(70.6%+5px)] h-[64.4%] bg-white overflow-hidden z-0 rounded-t-[3px]">
-                <Image
-                  src={slide.image || "/images/education/bca-screen.jpg"}
-                  alt={slide.title}
-                  fill
-                  priority
-                  unoptimized
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 820px"
-                  className="object-fill w-full h-full transition-all duration-500"
-                />
-              </div>
-
-              {/* Realistic Laptop Image on Stone Pedestal (Overlay with transparent display window) */}
+              {/* Layer 1: Static Laptop Base on Stone Pedestal (Does not rotate) */}
               <Image
-                src="/images/education/laptop-mockup.png"
-                alt="Laptop Mockup on Stone Pedestal"
+                src="/images/education/laptop-base.png"
+                alt="Laptop Base on Stone Pedestal"
                 fill
                 priority
                 unoptimized
@@ -112,12 +144,63 @@ export default function EducationSection() {
                 className="object-contain pointer-events-none z-10 drop-shadow-[0_20px_40px_rgba(0,0,0,0.22)]"
               />
 
+              {/* Layer 2: 3D Rotating Laptop Lid (Lifts open smoothly on scroll) */}
+              <div
+                className="absolute inset-0 z-20 pointer-events-none will-change-transform"
+                style={{
+                  transformOrigin: "50% 74.2%",
+                  transform: isLaptopOpen ? "rotateX(0deg)" : "rotateX(-90deg)",
+                  transition: "transform 1.1s cubic-bezier(0.16, 1, 0.3, 1)",
+                }}
+              >
+                {/* Screen Display Area — illuminates as laptop lifts open on scroll */}
+                <div
+                  className="absolute top-[9.6%] left-[calc(14.7%-2.5px)] w-[calc(70.6%+5px)] h-[64.4%] overflow-hidden z-0 rounded-t-[3px]"
+                  style={{
+                    backgroundColor: "#0a0a0a",
+                  }}
+                >
+                  <div
+                    style={{
+                      opacity: isLaptopOpen ? 1 : 0,
+                      transition: "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s",
+                      width: "100%",
+                      height: "100%",
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      src={slide.image || "/images/education/bca-screen.jpg"}
+                      alt={slide.title}
+                      fill
+                      priority
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 820px"
+                      className="object-fill w-full h-full transition-all duration-500"
+                    />
+                    {/* Realistic Glossy Glass Glare Overlay */}
+                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/[0.03] to-white/[0.12]" />
+                  </div>
+                </div>
+
+                {/* Screen Bezel with Web Camera */}
+                <Image
+                  src="/images/education/laptop-lid.png"
+                  alt="Laptop Screen Bezel"
+                  fill
+                  priority
+                  unoptimized
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 820px"
+                  className="object-contain pointer-events-none z-10"
+                />
+              </div>
+
               {/* Floating Interactive Chevron Buttons (Positioned close to laptop screen) */}
               <button
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous Qualification"
-                className="group absolute left-1 sm:left-2 md:left-3 top-[42%] -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
+                className="group absolute left-1 sm:left-2 md:left-3 top-[42%] -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
               >
                 <ChevronLeft className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[2.5] group-hover:-translate-x-0.5 transition-transform duration-300" />
               </button>
@@ -126,7 +209,7 @@ export default function EducationSection() {
                 type="button"
                 onClick={handleNext}
                 aria-label="Next Qualification"
-                className="group absolute right-1 sm:right-2 md:right-3 top-[42%] -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
+                className="group absolute right-1 sm:right-2 md:right-3 top-[42%] -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
               >
                 <ChevronRight className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[2.5] group-hover:translate-x-0.5 transition-transform duration-300" />
               </button>

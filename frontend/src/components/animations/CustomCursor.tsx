@@ -26,6 +26,12 @@ export default function CustomCursor() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    // Enable custom cursor mode to hide OS default cursor
+    const isFinePointer = window.matchMedia("(pointer: fine)").matches;
+    if (isFinePointer) {
+      document.documentElement.classList.add("custom-cursor-enabled");
+    }
+
     const onMouseMove = (e: MouseEvent) => {
       mousePos.current.x = e.clientX;
       mousePos.current.y = e.clientY;
@@ -104,6 +110,7 @@ export default function CustomCursor() {
     rafId.current = requestAnimationFrame(render);
 
     return () => {
+      document.documentElement.classList.remove("custom-cursor-enabled");
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mousedown", onMouseDown);
       window.removeEventListener("mouseup", onMouseUp);
