@@ -1,6 +1,20 @@
 # Sachin Sharma — Developer Portfolio & Technical Showcase
 
+<p align="left">
+  <a href="https://my-portfolio-sepia-kappa-25.vercel.app/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Live_Portfolio-Visit_Website_↗-fa4d56?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio Website" />
+  </a>
+  <a href="https://my-portfolio-sepia-kappa-25.vercel.app/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Production-Live_%26_Operational-10b981?style=for-the-badge&logo=statuspage&logoColor=white" alt="Deployment Status" />
+  </a>
+  <a href="https://my-portfolio-sepia-kappa-25.vercel.app/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Next.js_16-Turbopack-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 16" />
+  </a>
+</p>
+
 A modern, high-performance web portfolio built to present full-stack engineering work, system architecture case studies, educational credentials, and interactive user interface experiments. The project pairs a Next.js 16 frontend with an optional Python FastAPI microservice for database persistence and email notifications.
+
+> 🌐 **Live Production Deployment:** [https://my-portfolio-sepia-kappa-25.vercel.app/](https://my-portfolio-sepia-kappa-25.vercel.app/)
 
 ---
 
