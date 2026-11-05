@@ -215,8 +215,8 @@ export default function HeroSection() {
             {/* Left Block: PORT with Top Subtitle */}
             <div className="relative flex flex-col items-start">
               {/* Top-Left Subtitle: WEBSITE DEVELOPER (Slightly closer to PORT) */}
-              <div className="absolute bottom-full mb-1.5 sm:mb-2 md:mb-3 pl-1 flex items-center gap-2 font-mono text-xs sm:text-sm md:text-base uppercase tracking-[0.25em] text-[#090d15] font-bold whitespace-nowrap">
-                <span className="w-2 h-2 rounded-full bg-[#fa4d56]" />
+              <div className="absolute bottom-full mb-1.5 sm:mb-2 md:mb-3 pl-1 flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-sm md:text-base uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#090d15] font-bold whitespace-nowrap">
+                <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#fa4d56]" />
                 <span>WEBSITE DEVELOPER</span>
               </div>
               <h1 className="text-7xl sm:text-9xl md:text-[13rem] lg:text-[16rem] font-black uppercase font-heading tracking-tighter text-[#090d15] leading-[0.8]">
@@ -230,9 +230,9 @@ export default function HeroSection() {
                 FOL<span ref={heroLetterIRef} className="relative inline-block origin-bottom will-change-transform">I<span className="absolute -top-5 sm:-top-7 md:-top-10 lg:-top-13 left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none -translate-x-3 sm:-translate-x-4 md:-translate-x-5 lg:-translate-x-5"><span ref={heroDotRef} className="w-5 h-5 sm:w-7 sm:h-7 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full bg-[#fa4d56] shadow-sm will-change-transform" /></span></span>O
               </h1>
               {/* Bottom-Right Subtitle: SOFTWARE ENGINEER (Slightly closer to FOLIO, Equal Distance) */}
-              <div className="absolute top-full mt-3.5 sm:mt-4.5 md:mt-5.5 pr-1 flex items-center gap-2 font-mono text-xs sm:text-sm md:text-base uppercase tracking-[0.25em] text-[#090d15] font-bold whitespace-nowrap">
+              <div className="absolute top-full mt-3.5 sm:mt-4.5 md:mt-5.5 pr-1 flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-sm md:text-base uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#090d15] font-bold whitespace-nowrap">
                 <span>SOFTWARE ENGINEER</span>
-                <span className="w-2 h-2 rounded-full bg-[#fa4d56]" />
+                <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#fa4d56]" />
               </div>
             </div>
           </div>
