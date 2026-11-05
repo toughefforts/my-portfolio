@@ -73,23 +73,23 @@ export default function ArticleDetailPage({
       ? article.gallery
       : [
           {
-            src: article.image || "/images/blogs/blog1/blog1.jpg",
-            title: "Primary View",
+            src: article.image || "/images/blogs/blog1/design-workspace.webp",
+            title: "DESIGN WORKSPACE",
             step: "01 / 04",
           },
           {
-            src: "/images/blogs/blog4/blog1.jpg",
-            title: "Wireframing",
+            src: "/images/blogs/blog1/wireframing.webp",
+            title: "WIREFRAMING",
             step: "02 / 04",
           },
           {
-            src: "/images/blogs/blog7/blog1.jpg",
-            title: "Development",
+            src: "/images/blogs/blog1/development.webp",
+            title: "DEVELOPMENT",
             step: "03 / 04",
           },
           {
-            src: "/images/blogs/blog10/blog1.jpg",
-            title: "Final UI",
+            src: "/images/blogs/blog1/final-ui.webp",
+            title: "FINAL UI",
             step: "04 / 04",
           },
         ];
@@ -162,14 +162,20 @@ export default function ArticleDetailPage({
     );
   };
 
-  // TOC Section Titles matching the reference design
-  const tocItems = [
-    { id: 0, title: "The Anatomy of Modern Interface Design" },
-    { id: 1, title: "Wireframing to Execution" },
-    { id: 2, title: "Key Learnings & Future Horizons" },
-    { id: 3, title: "Tools & Workflow" },
-    { id: 4, title: "Final Thoughts" },
-  ];
+  // Dynamic TOC Section Titles matching the article's actual sections
+  const tocItems =
+    article.sections && article.sections.length > 0
+      ? article.sections.map((sec, idx) => ({
+          id: idx,
+          title: sec.heading.replace(/^[0-9]+\.\s*/, ""),
+        }))
+      : [
+          { id: 0, title: "The Anatomy of Modern Interface Design" },
+          { id: 1, title: "Wireframing to Execution" },
+          { id: 2, title: "Key Learnings & Future Horizons" },
+          { id: 3, title: "Tools & Workflow" },
+          { id: 4, title: "Final Thoughts" },
+        ];
 
   const navigateToSection = (section: string) => {
     sessionStorage.setItem("portfolio_active_section", section);
@@ -251,10 +257,21 @@ export default function ArticleDetailPage({
               transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
               className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px] font-black font-heading uppercase tracking-tight leading-[1.06] text-[#090d15] mb-4"
             >
-              DESIGN UNRAVELED:{" "}
-              <span className="text-[#fa4d56]">
-                BEHIND THE SCENES OF UI/UX MAGIC
-              </span>
+              {article.title.includes(":") ? (
+                <>
+                  {article.title.substring(0, article.title.indexOf(":") + 1)}{" "}
+                  <span className="text-[#fa4d56]">
+                    {article.title.substring(article.title.indexOf(":") + 1).trim()}
+                  </span>
+                </>
+              ) : (
+                <>
+                  {article.title.split(" ").slice(0, Math.ceil(article.title.split(" ").length / 2)).join(" ")}{" "}
+                  <span className="text-[#fa4d56]">
+                    {article.title.split(" ").slice(Math.ceil(article.title.split(" ").length / 2)).join(" ")}
+                  </span>
+                </>
+              )}
             </motion.h1>
 
             {/* Subtitle */}
@@ -276,7 +293,7 @@ export default function ArticleDetailPage({
             >
               <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#fa4d56]/20 bg-[#0c0e12] shrink-0">
                 <Image
-                  src={article.author.avatar || "/images/about/about-avatar.png"}
+                  src={article.author.avatar || "/images/author/sachin-sharma-profile.webp"}
                   alt={article.author.name}
                   fill
                   sizes="48px"
@@ -364,8 +381,8 @@ export default function ArticleDetailPage({
                 </div>
 
                 {/* Bottom Caption Overlay */}
-                <div className="absolute bottom-3 left-3 z-10">
-                  <span className="font-mono text-[10px] sm:text-[11px] uppercase font-bold tracking-wider text-white bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/15">
+                <div className="absolute bottom-3 left-3 right-3 z-10 pointer-events-none">
+                  <span className="font-mono text-[9px] sm:text-[10px] md:text-[11px] uppercase font-bold tracking-wider text-white bg-black/75 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-white/15 truncate inline-block max-w-full">
                     {galleryImages[activeGalleryIndex].step} {galleryImages[activeGalleryIndex].title}
                   </span>
                 </div>
@@ -393,8 +410,8 @@ export default function ArticleDetailPage({
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/35 group-hover:bg-black/15 transition-colors" />
-                  <div className="absolute bottom-2.5 left-2.5">
-                    <span className="font-mono text-[9px] sm:text-[9.5px] uppercase font-bold tracking-wider text-white bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/15">
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 pointer-events-none">
+                    <span className="font-mono text-[8.5px] sm:text-[9.5px] uppercase font-bold tracking-wider text-white bg-black/75 backdrop-blur-md px-2 py-1 rounded-md border border-white/15 truncate inline-block max-w-full">
                       {galleryImages[1].step} {galleryImages[1].title}
                     </span>
                   </div>
@@ -422,8 +439,8 @@ export default function ArticleDetailPage({
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/35 group-hover:bg-black/15 transition-colors" />
-                    <div className="absolute bottom-2 left-2">
-                      <span className="font-mono text-[8px] sm:text-[8.5px] uppercase font-bold tracking-wider text-white bg-black/75 backdrop-blur-md px-2 py-0.5 rounded border border-white/15">
+                    <div className="absolute bottom-2 left-2 right-2 pointer-events-none">
+                      <span className="font-mono text-[7.5px] sm:text-[8.5px] uppercase font-bold tracking-wider text-white bg-black/75 backdrop-blur-md px-1.5 py-0.5 rounded border border-white/15 truncate inline-block max-w-full">
                         {galleryImages[2].step} {galleryImages[2].title}
                       </span>
                     </div>
@@ -448,8 +465,8 @@ export default function ArticleDetailPage({
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/35 group-hover:bg-black/15 transition-colors" />
-                    <div className="absolute bottom-2 left-2">
-                      <span className="font-mono text-[8px] sm:text-[8.5px] uppercase font-bold tracking-wider text-white bg-black/75 backdrop-blur-md px-2 py-0.5 rounded border border-white/15">
+                    <div className="absolute bottom-2 left-2 right-2 pointer-events-none">
+                      <span className="font-mono text-[7.5px] sm:text-[8.5px] uppercase font-bold tracking-wider text-white bg-black/75 backdrop-blur-md px-1.5 py-0.5 rounded border border-white/15 truncate inline-block max-w-full">
                         {galleryImages[3].step} {galleryImages[3].title}
                       </span>
                     </div>
@@ -486,13 +503,13 @@ export default function ArticleDetailPage({
                   <span>PUBLICATION EXECUTIVE BRIEF</span>
                 </span>
                 <span className="font-mono text-[10.5px] text-[#64748b]">
-                  5 CHAPTERS &bull; {article.readTime || "8 MIN"} FULL READ
+                  {tocItems.length} CHAPTERS &bull; {article.readTime || "8 MIN"} FULL READ
                 </span>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse ml-auto sm:ml-0" title="Published Case Study" />
               </div>
 
               <p className="text-sm sm:text-[15.5px] text-[#334155] leading-relaxed font-normal">
-                An architectural study on <span className="text-[#fa4d56] font-semibold bg-[#fff1f2] px-1.5 py-0.5 rounded border border-[#fecdd3]/60">intentional visual ergonomics</span>, eliminating layout shifts, and engineering intuitive digital product identities without compromising utility.
+                {article.excerpt || article.subtitle}
               </p>
 
               {/* Architecture Focus Badges */}
@@ -500,12 +517,15 @@ export default function ArticleDetailPage({
                 <span className="font-mono text-[10px] uppercase font-bold text-[#94a3b8] mr-1">
                   CORE FOCUS:
                 </span>
-                {[
-                  "Design Systems",
-                  "Visual Ergonomics",
-                  "Modular Rhythm",
-                  "WCAG AAA Contrast",
-                ].map((item, idx) => (
+                {(article.tags && article.tags.length > 0
+                  ? article.tags
+                  : [
+                      "Design Systems",
+                      "Visual Ergonomics",
+                      "Modular Rhythm",
+                      "WCAG AAA Contrast",
+                    ]
+                ).map((item, idx) => (
                   <span
                     key={idx}
                     className="font-mono text-[10.5px] text-[#475569] bg-[#faf7f2] hover:bg-[#fff1f2] hover:text-[#fa4d56] px-2.5 py-1 rounded-lg border border-[#e8e8e3] transition-colors"
@@ -524,7 +544,7 @@ export default function ArticleDetailPage({
                   <span>FAST-TRACK CHAPTER NAV</span>
                 </span>
                 <span className="font-mono text-[10.5px] text-[#fa4d56] font-bold">
-                  0{activeSection + 1} / 05
+                  {activeSection + 1 < 10 ? `0${activeSection + 1}` : activeSection + 1} / {tocItems.length < 10 ? `0${tocItems.length}` : tocItems.length}
                 </span>
               </div>
 
@@ -637,7 +657,7 @@ export default function ArticleDetailPage({
             >
               <div className="relative w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-[#fa4d56]/20 bg-[#0c0e12] mb-3">
                 <Image
-                  src={article.author.avatar || "/images/about/about-avatar.png"}
+                  src={article.author.avatar || "/images/author/sachin-sharma-profile.webp"}
                   alt={article.author.name}
                   fill
                   sizes="64px"
@@ -1089,7 +1109,7 @@ export default function ArticleDetailPage({
                   >
                     <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden mb-3 bg-[#0c0e12]">
                       <Image
-                        src={article.comparisonImages?.left?.src || galleryImages[1]?.src || "/images/blogs/blog4/blog1.jpg"}
+                        src={article.comparisonImages?.left?.src || galleryImages[1]?.src || "/images/blogs/blog1/wireframing.webp"}
                         alt={article.comparisonImages?.left?.title || "From Ideas on Paper"}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -1113,7 +1133,7 @@ export default function ArticleDetailPage({
                   >
                     <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden mb-3 bg-[#0c0e12]">
                       <Image
-                        src={article.comparisonImages?.right?.src || galleryImages[2]?.src || "/images/blogs/blog7/blog1.jpg"}
+                        src={article.comparisonImages?.right?.src || galleryImages[2]?.src || "/images/blogs/blog1/development.webp"}
                         alt={article.comparisonImages?.right?.title || "To Pixel-Perfect Execution"}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -1255,7 +1275,7 @@ export default function ArticleDetailPage({
                     className="relative aspect-[16/10] sm:aspect-auto sm:h-full rounded-2xl overflow-hidden border border-[#27272a] bg-[#0c0e12] min-h-[180px] group"
                   >
                     <Image
-                      src={article.processImage?.src || galleryImages[3]?.src || "/images/blogs/blog10/blog1.jpg"}
+                      src={article.processImage?.src || galleryImages[3]?.src || "/images/blogs/blog1/final-ui.webp"}
                       alt={article.processImage?.caption || "Process Milestone"}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -1464,7 +1484,7 @@ export default function ArticleDetailPage({
                 <div className="flex items-center gap-4">
                   <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#fa4d56]/25 bg-[#0c0e12] shrink-0">
                     <Image
-                      src={article.author.avatar || "/images/about/about-avatar.png"}
+                      src={article.author.avatar || "/images/author/sachin-sharma-profile.webp"}
                       alt={article.author.name}
                       fill
                       sizes="56px"
@@ -1552,7 +1572,7 @@ export default function ArticleDetailPage({
                     {/* Thumbnail Image */}
                     <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-[#0c0e12] border border-[#e8e8e3] group-hover:border-[#fa4d56]/50 shadow-xs">
                       <Image
-                        src={prevArticle.image || "/images/blogs/blog1/blog1.jpg"}
+                        src={prevArticle.image || "/images/blogs/blog1/design-workspace.webp"}
                         alt={prevArticle.title}
                         fill
                         sizes="(max-width: 640px) 80px, 96px"
@@ -1647,7 +1667,7 @@ export default function ArticleDetailPage({
                     {/* Thumbnail Image (on right) */}
                     <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-[#0c0e12] border border-[#e8e8e3] group-hover:border-[#fa4d56]/50 shadow-xs order-1 sm:order-2">
                       <Image
-                        src={nextArticle.image || "/images/blogs/blog4/blog1.jpg"}
+                        src={nextArticle.image || "/images/blogs/blog1/wireframing.webp"}
                         alt={nextArticle.title}
                         fill
                         sizes="(max-width: 640px) 80px, 96px"

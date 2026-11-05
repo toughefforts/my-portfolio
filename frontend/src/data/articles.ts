@@ -15,12 +15,12 @@ export const articlesData: ArticleDetail[] = [
     readTime: "8 MIN READ",
     excerpt:
       "Exploring the creative process behind building intuitive and visually stunning user interfaces.",
-    image: "/images/blogs/blog1/blog1.jpg",
+    image: "/images/blogs/blog1/design-workspace.webp",
     categoryIcon: "palette",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "User Engagement", value: "+48%" },
@@ -30,42 +30,42 @@ export const articlesData: ArticleDetail[] = [
     tags: ["UI/UX Design", "Creative Process", "Visual Hierarchy", "Component Architecture"],
     gallery: [
       {
-        src: "/images/blogs/blog1/blog1.jpg",
-        title: "Design Workspace",
-        step: "01 / 04",
+            src: "/images/blogs/blog1/design-workspace.webp",
+            title: "DESIGN WORKSPACE",
+            step: "01 / 04"
       },
       {
-        src: "/images/blogs/blog4/blog1.jpg",
-        title: "Wireframing",
-        step: "02 / 04",
+            src: "/images/blogs/blog1/wireframing.webp",
+            title: "WIREFRAMING",
+            step: "02 / 04"
       },
       {
-        src: "/images/blogs/blog7/blog1.jpg",
-        title: "Development",
-        step: "03 / 04",
+            src: "/images/blogs/blog1/development.webp",
+            title: "DEVELOPMENT",
+            step: "03 / 04"
       },
       {
-        src: "/images/blogs/blog10/blog1.jpg",
-        title: "Final UI",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/blogs/blog1/blog1.jpg",
+            src: "/images/blogs/blog1/final-ui.webp",
+            title: "FINAL UI",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog1/design-workspace.webp",
     comparisonImages: {
       left: {
-        src: "/images/blogs/blog4/blog1.jpg",
-        title: "From Ideas on Paper",
-        desc: "Early sketches help visualize structure and flow before moving to digital design.",
+        src: "/images/blogs/blog1/wireframing.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/blogs/blog7/blog1.jpg",
-        title: "To Pixel-Perfect Execution",
-        desc: "Refined into a clean, high-fidelity design with modern UI components.",
+        src: "/images/blogs/blog1/final-ui.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/blogs/blog10/blog1.jpg",
-      caption: "Ideas Design Develop Launch.",
+      src: "/images/blogs/blog1/development.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -116,12 +116,12 @@ export const articlesData: ArticleDetail[] = [
     readTime: "7 MIN READ",
     excerpt:
       "How reductionist aesthetics and intentional negative space drive user retention and brand authority.",
-    image: "/images/blogs/blog2/blog1.jpg",
+    image: "/images/blogs/blog2/minimalist-branding.webp",
     categoryIcon: "palette",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Content Scannability", value: "+65%" },
@@ -131,42 +131,42 @@ export const articlesData: ArticleDetail[] = [
     tags: ["Minimalism", "Design Systems", "Typography", "Spatial Harmony"],
     gallery: [
       {
-        src: "/images/blogs/blog2/blog1.jpg",
-        title: "Swiss Grid Layout",
-        step: "01 / 04",
+            src: "/images/blogs/blog2/minimalist-branding.webp",
+            title: "MINIMALIST BRANDING",
+            step: "01 / 04"
       },
       {
-        src: "/images/services/landing-page.png",
-        title: "Negative Space",
-        step: "02 / 04",
+            src: "/images/blogs/blog2/typography-grid.webp",
+            title: "TYPOGRAPHY GRID",
+            step: "02 / 04"
       },
       {
-        src: "/images/services/landing-page.jpg",
-        title: "Typography Balance",
-        step: "03 / 04",
+            src: "/images/blogs/blog2/negative-space.webp",
+            title: "NEGATIVE SPACE",
+            step: "03 / 04"
       },
       {
-        src: "/images/education/laptop-mockup.png",
-        title: "Timeless Identity",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/blogs/blog2/blog1.jpg",
+            src: "/images/blogs/blog2/editorial-layout.webp",
+            title: "EDITORIAL LAYOUT",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog2/minimalist-branding.webp",
     comparisonImages: {
       left: {
-        src: "/images/services/landing-page.png",
-        title: "Unstructured Canvas",
-        desc: "Cluttered elements competing for attention without clear spatial hierarchy.",
+        src: "/images/blogs/blog2/typography-grid.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/services/landing-page.jpg",
-        title: "Harmonious Negative Space",
-        desc: "Disciplined whitespace framing content with clarity and editorial elegance.",
+        src: "/images/blogs/blog2/editorial-layout.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/education/laptop-mockup.png",
-      caption: "Form. Space. Restraint.",
+      src: "/images/blogs/blog2/negative-space.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -210,12 +210,12 @@ export const articlesData: ArticleDetail[] = [
     readTime: "5 MIN READ",
     excerpt:
       "Decoding how strategic high-contrast accents and curated dark modes guide cognitive attention.",
-    image: "/images/blogs/blog3/blog1.jpg",
+    image: "/images/blogs/blog3/color-palette-lab.webp",
     categoryIcon: "palette",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "CTA Click-Through", value: "+34%" },
@@ -225,42 +225,42 @@ export const articlesData: ArticleDetail[] = [
     tags: ["Color Theory", "Accessibility", "Dark Mode", "Conversion Optimization"],
     gallery: [
       {
-        src: "/images/blogs/blog3/blog1.jpg",
-        title: "Chromatic Palette",
-        step: "01 / 04",
+            src: "/images/blogs/blog3/color-palette-lab.webp",
+            title: "COLOR PALETTE LAB",
+            step: "01 / 04"
       },
       {
-        src: "/images/services/responsive-design.png",
-        title: "Contrast Matrix",
-        step: "02 / 04",
+            src: "/images/blogs/blog3/contrast-testing.webp",
+            title: "CONTRAST TESTING",
+            step: "02 / 04"
       },
       {
-        src: "/images/services/responsive-design.jpg",
-        title: "Dark Obsidian Canvas",
-        step: "03 / 04",
+            src: "/images/blogs/blog3/dark-mode-interface.webp",
+            title: "DARK MODE UI",
+            step: "03 / 04"
       },
       {
-        src: "/images/projects/skycast-weather-card.png",
-        title: "Coral Focal Energy",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/blogs/blog3/blog1.jpg",
+            src: "/images/blogs/blog3/brand-colorways.webp",
+            title: "BRAND COLORWAYS",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog3/color-palette-lab.webp",
     comparisonImages: {
       left: {
-        src: "/images/services/responsive-design.png",
-        title: "Low-Contrast Ambiguity",
-        desc: "Muted colors that cause cognitive hesitation and fail accessibility guidelines.",
+        src: "/images/blogs/blog3/contrast-testing.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/services/responsive-design.jpg",
-        title: "Calibrated High-Contrast",
-        desc: "Intentional 21:1 contrast ratios driving decisive user action instantly.",
+        src: "/images/blogs/blog3/dark-mode-interface.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/projects/skycast-weather-card.png",
-      caption: "Precision Color Harmony.",
+      src: "/images/blogs/blog3/brand-colorways.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -300,12 +300,12 @@ export const articlesData: ArticleDetail[] = [
     readTime: "10 MIN READ",
     excerpt:
       "How modern software engineering combines design principles with functional code architecture.",
-    image: "/images/projects/devstudio-cloudide-card.png",
+    image: "/images/blogs/blog4/code-architecture.webp",
     categoryIcon: "code",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Lighthouse Score", value: "99/100" },
@@ -315,42 +315,42 @@ export const articlesData: ArticleDetail[] = [
     tags: ["Next.js", "React Architecture", "TypeScript", "Performance Tuning"],
     gallery: [
       {
-        src: "/images/projects/devstudio-cloudide-card.png",
-        title: "Code Architecture",
-        step: "01 / 04",
+            src: "/images/blogs/blog4/code-architecture.webp",
+            title: "CODE ARCHITECTURE",
+            step: "01 / 04"
       },
       {
-        src: "/images/services/web-dev.png",
-        title: "Component Pipeline",
-        step: "02 / 04",
+            src: "/images/blogs/blog4/component-hierarchy.webp",
+            title: "COMPONENT TREE",
+            step: "02 / 04"
       },
       {
-        src: "/images/services/web-dev.jpg",
-        title: "Runtime Profiler",
-        step: "03 / 04",
+            src: "/images/blogs/blog4/performance-profiling.webp",
+            title: "PERF PROFILING",
+            step: "03 / 04"
       },
       {
-        src: "/images/education/bca-screen.jpg",
-        title: "60 FPS Execution",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/projects/devstudio-cloudide-card.png",
+            src: "/images/blogs/blog4/production-app.webp",
+            title: "PRODUCTION APP",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog4/code-architecture.webp",
     comparisonImages: {
       left: {
-        src: "/images/services/web-dev.png",
-        title: "Heavy Monolithic Code",
-        desc: "Unoptimized client-side hydration causing layout shifts and sluggish interactions.",
+        src: "/images/blogs/blog4/component-hierarchy.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/services/web-dev.jpg",
-        title: "GPU-Composited Pipeline",
-        desc: "Hardware-accelerated transforms yielding buttery smooth 60 FPS transitions.",
+        src: "/images/blogs/blog4/production-app.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/education/bca-screen.jpg",
-      caption: "Engineering Rigor + Visual Craft.",
+      src: "/images/blogs/blog4/performance-profiling.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -390,12 +390,12 @@ const activeSlide = useMemo(() => {
     readTime: "12 MIN READ",
     excerpt:
       "Benchmarking server components, streaming SSR, and edge middleware for sub-second page loads.",
-    image: "/images/projects/skycast-weather-card.png",
+    image: "/images/blogs/blog5/edge-architecture.webp",
     categoryIcon: "code",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Edge TTFB", value: "38ms" },
@@ -405,42 +405,42 @@ const activeSlide = useMemo(() => {
     tags: ["Next.js App Router", "Edge Middleware", "Streaming SSR", "Vercel"],
     gallery: [
       {
-        src: "/images/projects/skycast-weather-card.png",
-        title: "Edge Telemetry",
-        step: "01 / 04",
+            src: "/images/blogs/blog5/edge-architecture.webp",
+            title: "EDGE ARCHITECTURE",
+            step: "01 / 04"
       },
       {
-        src: "/images/projects/aichatbot-card.png",
-        title: "Server Components",
-        step: "02 / 04",
+            src: "/images/blogs/blog5/streaming-benchmarks.webp",
+            title: "STREAMING BENCHMARKS",
+            step: "02 / 04"
       },
       {
-        src: "/images/services/ecommerce.jpg",
-        title: "Streaming SSR",
-        step: "03 / 04",
+            src: "/images/blogs/blog5/serverless-terminal.webp",
+            title: "SERVERLESS TERMINAL",
+            step: "03 / 04"
       },
       {
-        src: "/images/education/adce-screen.jpg",
-        title: "38ms Edge TTFB",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/projects/skycast-weather-card.png",
+            src: "/images/blogs/blog5/instant-web-app.webp",
+            title: "INSTANT WEB APP",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog5/edge-architecture.webp",
     comparisonImages: {
       left: {
-        src: "/images/projects/aichatbot-card.png",
-        title: "Traditional Client SSR",
-        desc: "Delayed watermarked data responses waiting on backend round trips.",
+        src: "/images/blogs/blog5/streaming-benchmarks.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/services/ecommerce.jpg",
-        title: "Edge Distributed Streaming",
-        desc: "Sub-second chunks delivered over edge middleware with instant interactivity.",
+        src: "/images/blogs/blog5/instant-web-app.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/education/adce-screen.jpg",
-      caption: "Hybrid Edge Performance.",
+      src: "/images/blogs/blog5/serverless-terminal.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -464,12 +464,12 @@ const activeSlide = useMemo(() => {
     readTime: "9 MIN READ",
     excerpt:
       "Leveraging template literal types, conditional generics, and branded types for bulletproof codebases.",
-    image: "/images/services/api-integration.png",
+    image: "/images/blogs/blog6/type-system.webp",
     categoryIcon: "code",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Runtime Exceptions", value: "0 reported" },
@@ -479,42 +479,42 @@ const activeSlide = useMemo(() => {
     tags: ["TypeScript", "Generics", "Type Safety", "Software Craftsmanship"],
     gallery: [
       {
-        src: "/images/services/api-integration.png",
-        title: "Type Contracts",
-        step: "01 / 04",
+            src: "/images/blogs/blog6/type-system.webp",
+            title: "TYPE SYSTEM",
+            step: "01 / 04"
       },
       {
-        src: "/images/services/api-integration.jpg",
-        title: "Generic Schemas",
-        step: "02 / 04",
+            src: "/images/blogs/blog6/generics-patterns.webp",
+            title: "GENERICS PATTERNS",
+            step: "02 / 04"
       },
       {
-        src: "/images/skills/core-skills-tree-banner.png",
-        title: "Compiler Invariants",
-        step: "03 / 04",
+            src: "/images/blogs/blog6/compiler-diagnostics.webp",
+            title: "COMPILER DIAGNOSTICS",
+            step: "03 / 04"
       },
       {
-        src: "/images/education/class12-screen.jpg",
-        title: "Zero Runtime Bugs",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/services/api-integration.png",
+            src: "/images/blogs/blog6/bulletproof-app.webp",
+            title: "BULLETPROOF APP",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog6/type-system.webp",
     comparisonImages: {
       left: {
-        src: "/images/services/api-integration.jpg",
-        title: "Loosely Typed Code",
-        desc: "Prone to undefined runtime errors and hidden edge-case crashes.",
+        src: "/images/blogs/blog6/generics-patterns.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/skills/core-skills-tree-banner.png",
-        title: "Branded Discriminated Types",
-        desc: "Compile-time guarantees enforcing 100% bug-free data flow.",
+        src: "/images/blogs/blog6/bulletproof-app.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/education/class12-screen.jpg",
-      caption: "Type-Safe Architecture.",
+      src: "/images/blogs/blog6/compiler-diagnostics.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -541,12 +541,12 @@ const activeSlide = useMemo(() => {
     readTime: "6 MIN READ",
     excerpt:
       "A deep dive into design systems, typography scales, and scalable component frameworks.",
-    image: "/images/services/ui-ux.png",
+    image: "/images/blogs/blog7/design-tokens.webp",
     categoryIcon: "monitor",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Component Reusability", value: "94%" },
@@ -556,42 +556,42 @@ const activeSlide = useMemo(() => {
     tags: ["Design Systems", "Figma", "Component Frameworks", "Design Ops"],
     gallery: [
       {
-        src: "/images/services/ui-ux.png",
-        title: "Design System Tokens",
-        step: "01 / 04",
+            src: "/images/blogs/blog7/design-tokens.webp",
+            title: "DESIGN TOKENS",
+            step: "01 / 04"
       },
       {
-        src: "/images/services/ui-ux.jpg",
-        title: "Atomic Components",
-        step: "02 / 04",
+            src: "/images/blogs/blog7/component-library.webp",
+            title: "COMPONENT LIBRARY",
+            step: "02 / 04"
       },
       {
-        src: "/images/projects/zenith-streetwear-card.png",
-        title: "Responsive Layout",
-        step: "03 / 04",
+            src: "/images/blogs/blog7/user-research.webp",
+            title: "USER RESEARCH",
+            step: "03 / 04"
       },
       {
-        src: "/images/education/class10-screen.jpg",
-        title: "Component Library",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/services/ui-ux.png",
+            src: "/images/blogs/blog7/cross-device.webp",
+            title: "CROSS-DEVICE UI",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog7/design-tokens.webp",
     comparisonImages: {
       left: {
-        src: "/images/services/ui-ux.jpg",
-        title: "Ad-hoc Styling",
-        desc: "Inconsistent margins, duplicate buttons, and unmaintainable CSS rules.",
+        src: "/images/blogs/blog7/component-library.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/projects/zenith-streetwear-card.png",
-        title: "Atomic Design System",
-        desc: "Reusable primitives speeding up feature rollouts by over 45%.",
+        src: "/images/blogs/blog7/cross-device.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/education/class10-screen.jpg",
-      caption: "Scalable Component Foundations.",
+      src: "/images/blogs/blog7/user-research.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -614,12 +614,12 @@ const activeSlide = useMemo(() => {
     readTime: "8 MIN READ",
     excerpt:
       "Crafting fluid tactile feedback, magnetic button states, and smooth gesture transitions.",
-    image: "/images/projects/fluxly-taskflow-v3.png",
+    image: "/images/blogs/blog8/gesture-animation.webp",
     categoryIcon: "monitor",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Daily Active Retention", value: "+26%" },
@@ -629,42 +629,42 @@ const activeSlide = useMemo(() => {
     tags: ["Micro-interactions", "Motion Design", "Tactile Feedback", "Framer Motion"],
     gallery: [
       {
-        src: "/images/projects/fluxly-taskflow-v3.png",
-        title: "Interactive Canvas",
-        step: "01 / 04",
+            src: "/images/blogs/blog8/gesture-animation.webp",
+            title: "GESTURE ANIMATION",
+            step: "01 / 04"
       },
       {
-        src: "/images/projects/cryptovault-fintech-card.png",
-        title: "Tactile Haptics",
-        step: "02 / 04",
+            src: "/images/blogs/blog8/tactile-feedback.webp",
+            title: "TACTILE FEEDBACK",
+            step: "02 / 04"
       },
       {
-        src: "/images/services/ecommerce.png",
-        title: "Spring Physics",
-        step: "03 / 04",
+            src: "/images/blogs/blog8/interactive-state.webp",
+            title: "INTERACTIVE STATE",
+            step: "03 / 04"
       },
       {
-        src: "/images/contact/world-map-dots.png",
-        title: "Gesture Tracking",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/projects/fluxly-taskflow-v3.png",
+            src: "/images/blogs/blog8/delightful-ui.webp",
+            title: "DELIGHTFUL UI",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog8/gesture-animation.webp",
     comparisonImages: {
       left: {
-        src: "/images/projects/cryptovault-fintech-card.png",
-        title: "Static Inert UI",
-        desc: "Flat click events offering zero confirmation or emotional reward.",
+        src: "/images/blogs/blog8/tactile-feedback.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/services/ecommerce.png",
-        title: "Organic Motion Physics",
-        desc: "Fluid spring oscillations and magnetic pulls that feel tactile and engaging.",
+        src: "/images/blogs/blog8/delightful-ui.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/contact/world-map-dots.png",
-      caption: "The Secret of Retention.",
+      src: "/images/blogs/blog8/interactive-state.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -687,12 +687,12 @@ const activeSlide = useMemo(() => {
     readTime: "7 MIN READ",
     excerpt:
       "Achieving WCAG AAA compliance without sacrificing high-end typography and immersive visual polish.",
-    image: "/images/projects/aichatbot-card.png",
+    image: "/images/blogs/blog9/inclusive-design.webp",
     categoryIcon: "monitor",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "WCAG Compliance", value: "AAA Level" },
@@ -702,42 +702,42 @@ const activeSlide = useMemo(() => {
     tags: ["Accessibility", "WCAG AAA", "ARIA Roles", "Inclusive Design"],
     gallery: [
       {
-        src: "/images/projects/aichatbot-card.png",
-        title: "WCAG AAA Flow",
-        step: "01 / 04",
+            src: "/images/blogs/blog9/inclusive-design.webp",
+            title: "INCLUSIVE DESIGN",
+            step: "01 / 04"
       },
       {
-        src: "/images/hero/avatar-xray.png",
-        title: "Semantic Structure",
-        step: "02 / 04",
+            src: "/images/blogs/blog9/focus-states.webp",
+            title: "FOCUS STATES",
+            step: "02 / 04"
       },
       {
-        src: "/images/skills/skills-mountain-horizon.png",
-        title: "High-Contrast Palette",
-        step: "03 / 04",
+            src: "/images/blogs/blog9/contrast-audit.webp",
+            title: "CONTRAST AUDIT",
+            step: "03 / 04"
       },
       {
-        src: "/images/projects/nectura-ecommerce-final.png",
-        title: "Tap Targets",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/projects/aichatbot-card.png",
+            src: "/images/blogs/blog9/accessible-app.webp",
+            title: "ACCESSIBLE APP",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog9/inclusive-design.webp",
     comparisonImages: {
       left: {
-        src: "/images/hero/avatar-xray.png",
-        title: "Inaccessible Div Trees",
-        desc: "Missing roles, unannounced screen reader states, and inaccessible buttons.",
+        src: "/images/blogs/blog9/focus-states.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/skills/skills-mountain-horizon.png",
-        title: "Semantic HTML5 + ARIA",
-        desc: "Full keyboard navigation and pristine accessibility without compromising aesthetics.",
+        src: "/images/blogs/blog9/accessible-app.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/projects/nectura-ecommerce-final.png",
-      caption: "Inclusive by Design.",
+      src: "/images/blogs/blog9/contrast-audit.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -764,12 +764,12 @@ const activeSlide = useMemo(() => {
     readTime: "11 MIN READ",
     excerpt:
       "Deconstructing distributed caching, event-driven pipelines, and high-throughput micro-frontends.",
-    image: "/images/blogs/blog10/blog1.jpg",
+    image: "/images/blogs/blog10/distributed-caching.webp",
     categoryIcon: "layers",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Throughput Capacity", value: "50K req/s" },
@@ -779,42 +779,42 @@ const activeSlide = useMemo(() => {
     tags: ["Cloud Architecture", "Scalability", "Microservices", "Event-Driven"],
     gallery: [
       {
-        src: "/images/blogs/blog10/blog1.jpg",
-        title: "Distributed Mesh",
-        step: "01 / 04",
+            src: "/images/blogs/blog10/distributed-caching.webp",
+            title: "DISTRIBUTED CACHING",
+            step: "01 / 04"
       },
       {
-        src: "/images/projects/devstudio-cloudide-card.png",
-        title: "Microservices",
-        step: "02 / 04",
+            src: "/images/blogs/blog10/event-pipelines.webp",
+            title: "EVENT PIPELINES",
+            step: "02 / 04"
       },
       {
-        src: "/images/contact/world-map-dots.png",
-        title: "Global Nodes",
-        step: "03 / 04",
+            src: "/images/blogs/blog10/microfrontends.webp",
+            title: "MICROFRONTENDS",
+            step: "03 / 04"
       },
       {
-        src: "/images/services/api-integration.png",
-        title: "Gateway Balancer",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/blogs/blog10/blog1.jpg",
+            src: "/images/blogs/blog10/resilient-cluster.webp",
+            title: "RESILIENT CLUSTER",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog10/distributed-caching.webp",
     comparisonImages: {
       left: {
-        src: "/images/projects/devstudio-cloudide-card.png",
-        title: "Single Point of Failure",
-        desc: "Tightly coupled monolith crashing under unexpected traffic surges.",
+        src: "/images/blogs/blog10/event-pipelines.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/contact/world-map-dots.png",
-        title: "Decoupled Event Clusters",
-        desc: "Asynchronous pub/sub architecture scaling smoothly to 50K req/sec.",
+        src: "/images/blogs/blog10/resilient-cluster.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/services/api-integration.png",
-      caption: "High-Throughput Resilience.",
+      src: "/images/blogs/blog10/microfrontends.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -857,12 +857,12 @@ async function fetchWithResilience<T>(endpoint: string): Promise<T> {
     readTime: "9 MIN READ",
     excerpt:
       "Comparing atomic stores, signal reactive paradigms, and optimistic mutation rollback pipelines.",
-    image: "/images/projects/cryptovault-fintech-card.png",
+    image: "/images/blogs/blog11/atomic-stores.webp",
     categoryIcon: "layers",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Memory Footprint", value: "-35%" },
@@ -872,42 +872,42 @@ async function fetchWithResilience<T>(endpoint: string): Promise<T> {
     tags: ["State Management", "Concurrency", "Optimistic UI", "React Internals"],
     gallery: [
       {
-        src: "/images/projects/cryptovault-fintech-card.png",
-        title: "Atomic State Tree",
-        step: "01 / 04",
+            src: "/images/blogs/blog11/atomic-stores.webp",
+            title: "ATOMIC STORES",
+            step: "01 / 04"
       },
       {
-        src: "/images/projects/fluxly-taskflow-v3.png",
-        title: "Reactive Signals",
-        step: "02 / 04",
+            src: "/images/blogs/blog11/signal-reactivity.webp",
+            title: "SIGNAL REACTIVITY",
+            step: "02 / 04"
       },
       {
-        src: "/images/projects/devstudio-cloudide-card.png",
-        title: "Optimistic Mutation",
-        step: "03 / 04",
+            src: "/images/blogs/blog11/optimistic-mutations.webp",
+            title: "OPTIMISTIC MUTATIONS",
+            step: "03 / 04"
       },
       {
-        src: "/images/services/web-dev.png",
-        title: "Fine-Grained Updates",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/projects/cryptovault-fintech-card.png",
+            src: "/images/blogs/blog11/concurrency-engine.webp",
+            title: "CONCURRENCY ENGINE",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog11/atomic-stores.webp",
     comparisonImages: {
       left: {
-        src: "/images/projects/fluxly-taskflow-v3.png",
-        title: "Monolithic Store Rerender",
-        desc: "One state update causing cascading reconciliation across every child widget.",
+        src: "/images/blogs/blog11/signal-reactivity.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/projects/devstudio-cloudide-card.png",
-        title: "Signal-Driven Reactivity",
-        desc: "Laser-focused updates confined strictly to dirty DOM leaves.",
+        src: "/images/blogs/blog11/concurrency-engine.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/services/web-dev.png",
-      caption: "Predictable Concurrency.",
+      src: "/images/blogs/blog11/optimistic-mutations.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {
@@ -930,12 +930,12 @@ async function fetchWithResilience<T>(endpoint: string): Promise<T> {
     readTime: "10 MIN READ",
     excerpt:
       "Designing Redis cache invalidation strategies and edge geo-replication for global low latency.",
-    image: "/images/projects/nectura-ecommerce-final.png",
+    image: "/images/blogs/blog12/redis-clusters.webp",
     categoryIcon: "layers",
     author: {
       name: "Sachin Sharma",
       role: "Lead Full-Stack Engineer & UI Architect",
-      avatar: "/images/about/about-avatar.png",
+      avatar: "/images/author/sachin-sharma-profile.webp",
     },
     metrics: [
       { label: "Cache Hit Ratio", value: "98.7%" },
@@ -945,42 +945,42 @@ async function fetchWithResilience<T>(endpoint: string): Promise<T> {
     tags: ["Redis", "Distributed Caching", "Geo-Replication", "Cloud Infrastructure"],
     gallery: [
       {
-        src: "/images/projects/nectura-ecommerce-final.png",
-        title: "Edge Cache Hit Rate",
-        step: "01 / 04",
+            src: "/images/blogs/blog12/redis-clusters.webp",
+            title: "REDIS CLUSTERS",
+            step: "01 / 04"
       },
       {
-        src: "/images/contact/world-map-dots.png",
-        title: "Geo-Replication Nodes",
-        step: "02 / 04",
+            src: "/images/blogs/blog12/edge-replication.webp",
+            title: "EDGE REPLICATION",
+            step: "02 / 04"
       },
       {
-        src: "/images/services/api-integration.jpg",
-        title: "Redis Invalidation",
-        step: "03 / 04",
+            src: "/images/blogs/blog12/invalidation-strategies.webp",
+            title: "INVALIDATION FLOW",
+            step: "03 / 04"
       },
       {
-        src: "/images/projects/skycast-weather-card.png",
-        title: "14ms P90 Latency",
-        step: "04 / 04",
-      },
-    ],
-    sectionMedia: "/images/projects/nectura-ecommerce-final.png",
+            src: "/images/blogs/blog12/global-latency.webp",
+            title: "GLOBAL LATENCY",
+            step: "04 / 04"
+      }
+],
+    sectionMedia: "/images/blogs/blog12/redis-clusters.webp",
     comparisonImages: {
       left: {
-        src: "/images/contact/world-map-dots.png",
-        title: "Direct Database Choke",
-        desc: "Thousands of concurrent reads overwhelming SQL query pools.",
+        src: "/images/blogs/blog12/edge-replication.webp",
+        title: "From Conceptual Blueprints",
+        desc: "Early structural mapping and workflow architecture before interface synthesis.",
       },
       right: {
-        src: "/images/services/api-integration.jpg",
-        title: "Multi-Tier Redis Mesh",
-        desc: "98.7% cache hit ratio offloading 85% of load and answering queries in 14ms.",
+        src: "/images/blogs/blog12/global-latency.webp",
+        title: "To High-Fidelity Execution",
+        desc: "Synthesized into polished, responsive components with production-grade craft.",
       },
     },
     processImage: {
-      src: "/images/projects/skycast-weather-card.png",
-      caption: "Zero-Downtime Cache Sync.",
+      src: "/images/blogs/blog12/invalidation-strategies.webp",
+      caption: "Architect Synthesize Validate Deploy.",
     },
     sections: [
       {

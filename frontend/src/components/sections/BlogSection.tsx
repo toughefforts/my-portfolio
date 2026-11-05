@@ -40,7 +40,7 @@ const articlesData: ArticleItem[] = [
     readTime: "8 MIN READ",
     excerpt:
       "Exploring the creative process behind building intuitive and visually stunning user interfaces.",
-    image: "/images/blogs/blog1/blog1.jpg",
+    image: "/images/blogs/blog1/design-workspace.webp",
     categoryIcon: "palette",
   },
   {
@@ -52,7 +52,7 @@ const articlesData: ArticleItem[] = [
     readTime: "7 MIN READ",
     excerpt:
       "How reductionist aesthetics and intentional negative space drive user retention and brand authority.",
-    image: "/images/blogs/blog2/blog1.jpg",
+    image: "/images/blogs/blog2/minimalist-branding.webp",
     categoryIcon: "palette",
   },
   {
@@ -64,7 +64,7 @@ const articlesData: ArticleItem[] = [
     readTime: "5 MIN READ",
     excerpt:
       "Decoding how strategic high-contrast accents and curated dark modes guide cognitive attention.",
-    image: "/images/blogs/blog3/blog1.jpg",
+    image: "/images/blogs/blog3/color-palette-lab.webp",
     categoryIcon: "palette",
   },
 
@@ -78,7 +78,7 @@ const articlesData: ArticleItem[] = [
     readTime: "10 MIN READ",
     excerpt:
       "How modern software engineering combines design principles with functional code architecture.",
-    image: "/images/projects/devstudio-cloudide-card.png",
+    image: "/images/blogs/blog4/code-architecture.webp",
     categoryIcon: "code",
   },
   {
@@ -90,7 +90,7 @@ const articlesData: ArticleItem[] = [
     readTime: "12 MIN READ",
     excerpt:
       "Benchmarking server components, streaming SSR, and edge middleware for sub-second page loads.",
-    image: "/images/projects/skycast-weather-card.png",
+    image: "/images/blogs/blog5/edge-architecture.webp",
     categoryIcon: "code",
   },
   {
@@ -102,7 +102,7 @@ const articlesData: ArticleItem[] = [
     readTime: "9 MIN READ",
     excerpt:
       "Leveraging template literal types, conditional generics, and branded types for bulletproof codebases.",
-    image: "/images/services/api-integration.png",
+    image: "/images/blogs/blog6/type-system.webp",
     categoryIcon: "code",
   },
 
@@ -116,7 +116,7 @@ const articlesData: ArticleItem[] = [
     readTime: "6 MIN READ",
     excerpt:
       "A deep dive into design systems, typography scales, and scalable component frameworks.",
-    image: "/images/services/ui-ux.png",
+    image: "/images/blogs/blog7/design-tokens.webp",
     categoryIcon: "monitor",
   },
   {
@@ -128,7 +128,7 @@ const articlesData: ArticleItem[] = [
     readTime: "8 MIN READ",
     excerpt:
       "Crafting fluid tactile feedback, magnetic button states, and smooth gesture transitions.",
-    image: "/images/projects/fluxly-taskflow-v3.png",
+    image: "/images/blogs/blog8/gesture-animation.webp",
     categoryIcon: "monitor",
   },
   {
@@ -140,7 +140,7 @@ const articlesData: ArticleItem[] = [
     readTime: "7 MIN READ",
     excerpt:
       "Achieving WCAG AAA compliance without sacrificing high-end typography and immersive visual polish.",
-    image: "/images/projects/aichatbot-card.png",
+    image: "/images/blogs/blog9/inclusive-design.webp",
     categoryIcon: "monitor",
   },
 
@@ -154,7 +154,7 @@ const articlesData: ArticleItem[] = [
     readTime: "11 MIN READ",
     excerpt:
       "Deconstructing distributed caching, event-driven pipelines, and high-throughput micro-frontends.",
-    image: "/images/blogs/blog10/blog1.jpg",
+    image: "/images/blogs/blog10/distributed-caching.webp",
     categoryIcon: "layers",
   },
   {
@@ -166,7 +166,7 @@ const articlesData: ArticleItem[] = [
     readTime: "9 MIN READ",
     excerpt:
       "Comparing atomic stores, signal reactive paradigms, and optimistic mutation rollback pipelines.",
-    image: "/images/projects/cryptovault-fintech-card.png",
+    image: "/images/blogs/blog11/atomic-stores.webp",
     categoryIcon: "layers",
   },
   {
@@ -178,7 +178,7 @@ const articlesData: ArticleItem[] = [
     readTime: "10 MIN READ",
     excerpt:
       "Designing Redis cache invalidation strategies and edge geo-replication for global low latency.",
-    image: "/images/projects/nectura-ecommerce-final.png",
+    image: "/images/blogs/blog12/redis-clusters.webp",
     categoryIcon: "layers",
   },
 ];
