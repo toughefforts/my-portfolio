@@ -15,7 +15,7 @@ export const articlesData: ArticleDetail[] = [
     readTime: "8 MIN READ",
     excerpt:
       "Exploring the creative process behind building intuitive and visually stunning user interfaces.",
-    image: "/images/blog/case-study-1.jpg",
+    image: "/images/blogs/blog1/blog1.jpg",
     categoryIcon: "palette",
     author: {
       name: "Sachin Sharma",
@@ -30,41 +30,41 @@ export const articlesData: ArticleDetail[] = [
     tags: ["UI/UX Design", "Creative Process", "Visual Hierarchy", "Component Architecture"],
     gallery: [
       {
-        src: "/images/blog/case-study-1.jpg",
+        src: "/images/blogs/blog1/blog1.jpg",
         title: "Design Workspace",
         step: "01 / 04",
       },
       {
-        src: "/images/blog/case-study-2.jpg",
+        src: "/images/blogs/blog4/blog1.jpg",
         title: "Wireframing",
         step: "02 / 04",
       },
       {
-        src: "/images/blog/case-study-3.jpg",
+        src: "/images/blogs/blog7/blog1.jpg",
         title: "Development",
         step: "03 / 04",
       },
       {
-        src: "/images/blog/case-study-arch.jpg",
+        src: "/images/blogs/blog10/blog1.jpg",
         title: "Final UI",
         step: "04 / 04",
       },
     ],
-    sectionMedia: "/images/blog/case-study-1.jpg",
+    sectionMedia: "/images/blogs/blog1/blog1.jpg",
     comparisonImages: {
       left: {
-        src: "/images/blog/case-study-2.jpg",
+        src: "/images/blogs/blog4/blog1.jpg",
         title: "From Ideas on Paper",
         desc: "Early sketches help visualize structure and flow before moving to digital design.",
       },
       right: {
-        src: "/images/blog/case-study-3.jpg",
+        src: "/images/blogs/blog7/blog1.jpg",
         title: "To Pixel-Perfect Execution",
         desc: "Refined into a clean, high-fidelity design with modern UI components.",
       },
     },
     processImage: {
-      src: "/images/blog/case-study-arch.jpg",
+      src: "/images/blogs/blog10/blog1.jpg",
       caption: "Ideas Design Develop Launch.",
     },
     sections: [
@@ -116,7 +116,7 @@ export const articlesData: ArticleDetail[] = [
     readTime: "7 MIN READ",
     excerpt:
       "How reductionist aesthetics and intentional negative space drive user retention and brand authority.",
-    image: "/images/blog/minimalist-design.jpg",
+    image: "/images/blogs/blog2/blog1.jpg",
     categoryIcon: "palette",
     author: {
       name: "Sachin Sharma",
@@ -131,7 +131,7 @@ export const articlesData: ArticleDetail[] = [
     tags: ["Minimalism", "Design Systems", "Typography", "Spatial Harmony"],
     gallery: [
       {
-        src: "/images/blog/minimalist-design.jpg",
+        src: "/images/blogs/blog2/blog1.jpg",
         title: "Swiss Grid Layout",
         step: "01 / 04",
       },
@@ -151,7 +151,7 @@ export const articlesData: ArticleDetail[] = [
         step: "04 / 04",
       },
     ],
-    sectionMedia: "/images/blog/minimalist-design.jpg",
+    sectionMedia: "/images/blogs/blog2/blog1.jpg",
     comparisonImages: {
       left: {
         src: "/images/services/landing-page.png",
@@ -210,7 +210,7 @@ export const articlesData: ArticleDetail[] = [
     readTime: "5 MIN READ",
     excerpt:
       "Decoding how strategic high-contrast accents and curated dark modes guide cognitive attention.",
-    image: "/images/blog/color-theory.jpg",
+    image: "/images/blogs/blog3/blog1.jpg",
     categoryIcon: "palette",
     author: {
       name: "Sachin Sharma",
@@ -225,7 +225,7 @@ export const articlesData: ArticleDetail[] = [
     tags: ["Color Theory", "Accessibility", "Dark Mode", "Conversion Optimization"],
     gallery: [
       {
-        src: "/images/blog/color-theory.jpg",
+        src: "/images/blogs/blog3/blog1.jpg",
         title: "Chromatic Palette",
         step: "01 / 04",
       },
@@ -240,12 +240,12 @@ export const articlesData: ArticleDetail[] = [
         step: "03 / 04",
       },
       {
-        src: "/images/projects/skycast-weather-v2.png",
+        src: "/images/projects/skycast-weather-card.png",
         title: "Coral Focal Energy",
         step: "04 / 04",
       },
     ],
-    sectionMedia: "/images/blog/color-theory.jpg",
+    sectionMedia: "/images/blogs/blog3/blog1.jpg",
     comparisonImages: {
       left: {
         src: "/images/services/responsive-design.png",
@@ -259,7 +259,7 @@ export const articlesData: ArticleDetail[] = [
       },
     },
     processImage: {
-      src: "/images/projects/skycast-weather-v2.png",
+      src: "/images/projects/skycast-weather-card.png",
       caption: "Precision Color Harmony.",
     },
     sections: [
@@ -410,7 +410,7 @@ const activeSlide = useMemo(() => {
         step: "01 / 04",
       },
       {
-        src: "/images/projects/aureli-aichatbot-card.png",
+        src: "/images/projects/aichatbot-card.png",
         title: "Server Components",
         step: "02 / 04",
       },
@@ -428,7 +428,7 @@ const activeSlide = useMemo(() => {
     sectionMedia: "/images/projects/skycast-weather-card.png",
     comparisonImages: {
       left: {
-        src: "/images/projects/aureli-aichatbot-card.png",
+        src: "/images/projects/aichatbot-card.png",
         title: "Traditional Client SSR",
         desc: "Delayed watermarked data responses waiting on backend round trips.",
       },
@@ -764,7 +764,7 @@ const activeSlide = useMemo(() => {
     readTime: "11 MIN READ",
     excerpt:
       "Deconstructing distributed caching, event-driven pipelines, and high-throughput micro-frontends.",
-    image: "/images/blog/case-study-arch.jpg",
+    image: "/images/blogs/blog10/blog1.jpg",
     categoryIcon: "layers",
     author: {
       name: "Sachin Sharma",
@@ -779,7 +779,7 @@ const activeSlide = useMemo(() => {
     tags: ["Cloud Architecture", "Scalability", "Microservices", "Event-Driven"],
     gallery: [
       {
-        src: "/images/blog/case-study-arch.jpg",
+        src: "/images/blogs/blog10/blog1.jpg",
         title: "Distributed Mesh",
         step: "01 / 04",
       },
@@ -799,7 +799,7 @@ const activeSlide = useMemo(() => {
         step: "04 / 04",
       },
     ],
-    sectionMedia: "/images/blog/case-study-arch.jpg",
+    sectionMedia: "/images/blogs/blog10/blog1.jpg",
     comparisonImages: {
       left: {
         src: "/images/projects/devstudio-cloudide-card.png",

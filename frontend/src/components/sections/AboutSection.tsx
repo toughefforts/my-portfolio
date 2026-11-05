@@ -16,6 +16,12 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
+/**
+ * About Section Component.
+ *
+ * Highlights developer background, technical philosophy, personal values,
+ * geographic location (Delhi, India), primary core stack icons, and 3D character asset.
+ */
 export default function AboutSection() {
   const infoCards = [
     {
@@ -227,7 +233,7 @@ export default function AboutSection() {
                     </div>
 
                     {/* Quote Text */}
-                    <blockquote className="font-serif italic text-xs sm:text-sm text-[#1e293b] leading-relaxed mb-4">
+                    <blockquote className="font-serif italic text-xs sm:text-sm text-[#64748b] leading-relaxed mb-4">
                       &ldquo;Software engineering is the delicate balance between technical precision, mathematical structure, and human-centered design.&rdquo;
                     </blockquote>
 
@@ -244,27 +250,34 @@ export default function AboutSection() {
             </div>
 
 
-            {/* MIDDLE ROW: 4-Item Quick Stats / Metadata Bar (Location left-aligned, other 3 centered) */}
+            {/* MIDDLE ROW: 4-Item Quick Stats / Metadata Bar (2x2 grid on mobile with clean 4-quadrant dividers, 4-col on desktop) */}
             <RevealAnimation delay={0.2}>
-              <div className="bg-white border border-[#e2e2da] rounded-2xl p-3 sm:p-3.5 shadow-xs">
-                <div className="grid grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#e2e2da]">
+              <div className="bg-white border border-[#e2e2da] rounded-2xl p-2.5 sm:p-3.5 shadow-xs">
+                <div className="grid grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-[#e2e2da]">
                   {infoCards.map((item, index) => {
                     const IconComponent = item.icon;
+                    const isLeftCol = index % 2 === 0;
+                    const isTopRow = index < 2;
+
                     return (
                       <div
                         key={item.label}
-                        className={`flex items-center gap-2.5 sm:gap-3 py-2 lg:py-0 px-2 sm:px-3 text-left ${
-                          index === 0 ? "justify-start pl-1 sm:pl-2 lg:pl-3" : "justify-center"
+                        className={`flex items-center gap-2 sm:gap-3 py-2 sm:py-2.5 lg:py-0 px-2 sm:px-3 text-left justify-start ${
+                          index === 0 ? "lg:justify-start lg:pl-3" : "lg:justify-center"
+                        } ${
+                          isTopRow ? "border-b border-[#e2e2da] lg:border-b-0 pb-2 sm:pb-2.5 lg:pb-0" : "pt-2 sm:pt-2.5 lg:pt-0"
+                        } ${
+                          isLeftCol ? "border-r border-[#e2e2da] lg:border-r-0 pr-2 sm:pr-3 lg:pr-0" : "pl-2 sm:pl-3 lg:pl-0"
                         }`}
                       >
-                        <div className="w-8 h-8 rounded-full bg-[#fee2e2] text-[#ef4444] flex items-center justify-center shrink-0 shadow-2xs">
-                          <IconComponent className="w-4 h-4" />
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#fee2e2] text-[#ef4444] flex items-center justify-center shrink-0 shadow-2xs">
+                          <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-[8.5px] sm:text-[9px] font-mono uppercase tracking-wider text-[#94a3b8] font-semibold">
+                          <div className="text-[8px] sm:text-[9px] font-mono uppercase tracking-wider text-[#94a3b8] font-semibold truncate">
                             {item.label}
                           </div>
-                          <div className="text-[10px] sm:text-[10.5px] lg:text-[11px] xl:text-[11.5px] font-heading font-black text-[#090d15] tracking-tight uppercase mt-0.5 whitespace-nowrap">
+                          <div className="text-[9.5px] xs:text-[10px] sm:text-[10.5px] lg:text-[11px] xl:text-[11.5px] font-heading font-black text-[#090d15] tracking-tight uppercase mt-0.5 truncate">
                             {item.value}
                           </div>
                         </div>

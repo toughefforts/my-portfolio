@@ -8,6 +8,15 @@ import RevealAnimation from "@/components/animations/RevealAnimation";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { scrollToCleanSection } from "@/lib/navigation";
 
+/**
+ * Hero Section Component.
+ *
+ * Featured introduction section featuring:
+ * - Animated editorial headline with bouncing branded title dot.
+ * - Interactive 3D avatar with an offscreen-canvas-based X-Ray skeleton reticle.
+ * - Numerical impact counters for projects, experience, and clients.
+ * - Smooth scroll call-to-action buttons.
+ */
 export default function HeroSection() {
   const heroLetterIRef = useRef<HTMLSpanElement>(null);
   const heroDotRef = useRef<HTMLSpanElement>(null);
@@ -100,86 +109,95 @@ export default function HeroSection() {
   // Drops the coral dot from above, squashes upon striking the letter 'I',
   // and bounces up into its resting accent position above the 'I'.
   useEffect(() => {
-
     if (heroDotRef.current && heroLetterIRef.current) {
-      // Delay so it starts right as hero section appears after intro preloader
-      const tl = gsap.timeline({ delay: 0.85 });
+      let tl: gsap.core.Timeline | null = null;
 
-      // Step 1: Drop along an arc from top-right down to letter 'I'
-      tl.fromTo(
-        heroDotRef.current,
-        {
-          x: 150,
-          y: -320,
-          scaleX: 0.7,
-          scaleY: 1.3,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          y: 28, // Hits top of letter 'I'
-          scaleX: 1,
-          scaleY: 1,
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.in",
-        }
-      )
-        // Step 2: Squash on impact
-        .to(heroDotRef.current, {
-          scaleX: 1.5,
-          scaleY: 0.5,
-          duration: 0.08,
-          ease: "power1.out",
-        })
-        // Letter 'I' reacts to impact
-        .to(
-          heroLetterIRef.current,
+      const runHeroAnimation = () => {
+        if (tl || !heroDotRef.current || !heroLetterIRef.current) return;
+        tl = gsap.timeline({ delay: 0.1 });
+
+        // Step 1: Drop along an arc from top-right down to letter 'I'
+        tl.fromTo(
+          heroDotRef.current,
           {
-            y: 8,
-            duration: 0.08,
-            yoyo: true,
-            repeat: 1,
-            ease: "power1.inOut",
+            x: 150,
+            y: -320,
+            scaleX: 0.7,
+            scaleY: 1.3,
+            opacity: 0,
           },
-          "<"
+          {
+            x: 0,
+            y: 28, // Hits top of letter 'I'
+            scaleX: 1,
+            scaleY: 1,
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.in",
+          }
         )
-        // Step 3: Bounce straight up above letter 'I'
-        .to(heroDotRef.current, {
-          x: 0,
-          y: -38,
-          scaleX: 0.85,
-          scaleY: 1.15,
-          duration: 0.38,
-          ease: "power1.out",
-        })
-        // Step 4: Fall down into resting spot directly above 'I'
-        .to(heroDotRef.current, {
-          x: 0,
-          y: 0,
-          scaleX: 1.2,
-          scaleY: 0.8,
-          duration: 0.28,
-          ease: "power2.in",
-        })
-        // Step 5: Gentle settle bounce
-        .to(heroDotRef.current, {
-          y: -7,
-          scaleX: 0.95,
-          scaleY: 1.05,
-          duration: 0.16,
-          ease: "power1.out",
-        })
-        .to(heroDotRef.current, {
-          y: 0,
-          scaleX: 1,
-          scaleY: 1,
-          duration: 0.16,
-          ease: "power1.inOut",
-        });
+          // Step 2: Squash on impact
+          .to(heroDotRef.current, {
+            scaleX: 1.5,
+            scaleY: 0.5,
+            duration: 0.08,
+            ease: "power1.out",
+          })
+          // Letter 'I' reacts to impact
+          .to(
+            heroLetterIRef.current,
+            {
+              y: 8,
+              duration: 0.08,
+              yoyo: true,
+              repeat: 1,
+              ease: "power1.inOut",
+            },
+            "<"
+          )
+          // Step 3: Bounce straight up above letter 'I'
+          .to(heroDotRef.current, {
+            x: 0,
+            y: -38,
+            scaleX: 0.85,
+            scaleY: 1.15,
+            duration: 0.38,
+            ease: "power1.out",
+          })
+          // Step 4: Fall down into resting spot directly above 'I'
+          .to(heroDotRef.current, {
+            x: 0,
+            y: 0,
+            scaleX: 1.2,
+            scaleY: 0.8,
+            duration: 0.28,
+            ease: "power2.in",
+          })
+          // Step 5: Gentle settle bounce
+          .to(heroDotRef.current, {
+            y: -7,
+            scaleX: 0.95,
+            scaleY: 1.05,
+            duration: 0.16,
+            ease: "power1.out",
+          })
+          .to(heroDotRef.current, {
+            y: 0,
+            scaleX: 1,
+            scaleY: 1,
+            duration: 0.16,
+            ease: "power1.inOut",
+          });
+      };
+
+      // Listen for intro-complete event or fallback timer after 2.7s
+      window.addEventListener("intro-complete", runHeroAnimation, { once: true });
+      const timer = setTimeout(runHeroAnimation, 2700);
 
       return () => {
-        tl.kill();
+        window.removeEventListener("intro-complete", runHeroAnimation);
+        clearTimeout(timer);
+        if (tl) tl.kill();
       };
     }
   }, []);

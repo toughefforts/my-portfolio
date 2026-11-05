@@ -287,20 +287,29 @@ const coreSkills = [
 
 // Falling leaves configuration spawning from tree branches with organic sway
 const fallingLeaves = [
-  { id: 1, left: "51%", top: "14%", duration: "6.8s", delay: "0s", anim: "leafFallA", scale: 1.0 },
-  { id: 2, left: "41%", top: "21%", duration: "7.6s", delay: "1.4s", anim: "leafFallB", scale: 0.85 },
-  { id: 3, left: "69%", top: "19%", duration: "6.2s", delay: "2.8s", anim: "leafFallC", scale: 1.1 },
-  { id: 4, left: "35%", top: "38%", duration: "8.2s", delay: "0.8s", anim: "leafFallB", scale: 0.9 },
-  { id: 5, left: "77%", top: "37%", duration: "7.0s", delay: "3.5s", anim: "leafFallA", scale: 1.05 },
-  { id: 6, left: "32%", top: "57%", duration: "5.8s", delay: "2.1s", anim: "leafFallC", scale: 0.8 },
-  { id: 7, left: "84%", top: "55%", duration: "7.4s", delay: "4.2s", anim: "leafFallA", scale: 0.95 },
-  { id: 8, left: "56%", top: "24%", duration: "8.5s", delay: "1.9s", anim: "leafFallB", scale: 1.0 },
-  { id: 9, left: "45%", top: "32%", duration: "6.5s", delay: "4.8s", anim: "leafFallC", scale: 0.9 },
-  { id: 10, left: "88%", top: "49%", duration: "7.8s", delay: "3.1s", anim: "leafFallA", scale: 0.85 },
-  { id: 11, left: "44%", top: "16%", duration: "6.0s", delay: "5.5s", anim: "leafFallB", scale: 1.15 },
-  { id: 12, left: "63%", top: "33%", duration: "8.0s", delay: "2.5s", anim: "leafFallC", scale: 0.95 },
+  { id: 1, left: "51%", top: "14%", duration: "6.8s", mobileDuration: "10.8s", delay: "0s", anim: "leafFallA", scale: 1.0 },
+  { id: 2, left: "41%", top: "21%", duration: "7.6s", mobileDuration: "12.0s", delay: "1.8s", anim: "leafFallB", scale: 0.85 },
+  { id: 3, left: "69%", top: "19%", duration: "6.2s", mobileDuration: "9.8s", delay: "3.4s", anim: "leafFallC", scale: 1.1 },
+  { id: 4, left: "35%", top: "38%", duration: "8.2s", mobileDuration: "13.0s", delay: "1.2s", anim: "leafFallB", scale: 0.9 },
+  { id: 5, left: "77%", top: "37%", duration: "7.0s", mobileDuration: "11.2s", delay: "4.5s", anim: "leafFallA", scale: 1.05 },
+  { id: 6, left: "32%", top: "57%", duration: "5.8s", mobileDuration: "9.5s", delay: "2.8s", anim: "leafFallC", scale: 0.8 },
+  { id: 7, left: "84%", top: "55%", duration: "7.4s", mobileDuration: "11.8s", delay: "5.6s", anim: "leafFallA", scale: 0.95 },
+  { id: 8, left: "56%", top: "24%", duration: "8.5s", mobileDuration: "13.5s", delay: "2.5s", anim: "leafFallB", scale: 1.0 },
+  { id: 9, left: "45%", top: "32%", duration: "6.5s", mobileDuration: "10.2s", delay: "6.2s", anim: "leafFallC", scale: 0.9 },
+  { id: 10, left: "88%", top: "49%", duration: "7.8s", mobileDuration: "12.4s", delay: "4.0s", anim: "leafFallA", scale: 0.85 },
+  { id: 11, left: "44%", top: "16%", duration: "6.0s", mobileDuration: "9.6s", delay: "7.0s", anim: "leafFallB", scale: 1.15 },
+  { id: 12, left: "63%", top: "33%", duration: "8.0s", mobileDuration: "12.8s", delay: "3.2s", anim: "leafFallC", scale: 0.95 },
 ];
 
+/**
+ * Skills Section Component.
+ *
+ * Immersive panoramic bonsai tech tree experience featuring:
+ * - Handcrafted vector brand identity badges with custom radiant gradients.
+ * - Glowing interactive neon medallion nodes mapped along botanical branches.
+ * - Ambient floating cherry blossom leaf animations.
+ * - Interactive node inspect card showing mastery percentage, experience level, and description.
+ */
 export default function SkillsSection() {
   const [activeSkill, setActiveSkill] = useState<string | null>(null);
 
@@ -386,12 +395,52 @@ export default function SkillsSection() {
         .compound-badge-unified {
           transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
+        .falling-leaf-node {
+          animation-duration: var(--mobile-dur, 11s) !important;
+        }
+        @media (min-width: 640px) {
+          .falling-leaf-node {
+            animation-duration: var(--desktop-dur, 7s) !important;
+          }
+        }
       `}} />
 
       <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8">
 
+        {/* Mobile Header (Placed above tree on mobile so tree sits cleanly below without overlapping text) */}
+        <div className="block md:hidden mb-5 max-w-md">
+          {/* Eyebrow */}
+          <RevealAnimation>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-5 h-[2px] bg-[#fa4d56] rounded-full inline-block" />
+              <span className="font-mono text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#7c8ba1]">
+                MY TECH STACK
+              </span>
+            </div>
+          </RevealAnimation>
+
+          {/* Core Skills Heading */}
+          <RevealAnimation delay={0.1}>
+            <h2 className="font-heading font-black text-3xl sm:text-4xl uppercase tracking-tight text-[#090d15] leading-[0.88] select-none">
+              CORE <span className="text-[#fa4d56]">SKILLS</span>
+            </h2>
+          </RevealAnimation>
+
+          {/* Thin Divider Line */}
+          <div className="w-8 h-[1.5px] bg-[#d5d7dc] my-2.5" />
+
+          {/* Description Paragraph */}
+          <RevealAnimation delay={0.2}>
+            <p className="font-serif italic text-[#64748b] text-xs leading-relaxed max-w-[280px]">
+              A strong foundation of modern technologies, enabling me to build scalable, high-performance and user-friendly digital solutions.
+            </p>
+          </RevealAnimation>
+        </div>
+
         {/* Master Panoramic Visual Canvas - Seamlessly on #f8f8f5 (No card container) */}
-        <div className="relative w-full aspect-[16/11] sm:aspect-[16/9] lg:aspect-[2048/960]">
+        <div className="-mx-4 sm:mx-0 w-[calc(100%+2rem)] sm:w-full overflow-x-clip sm:overflow-visible my-3 xs:my-4 sm:my-0">
+          <div className="relative w-[128%] xs:w-[132%] sm:w-full -ml-[22%] xs:-ml-[24%] sm:ml-0 aspect-[2048/960]">
           
           {/* Subtle Misty Mountain Horizon Backdrop (Faded behind tree base & roots) */}
           <div className="absolute inset-0 z-0 pointer-events-none select-none">
@@ -420,23 +469,25 @@ export default function SkillsSection() {
             {fallingLeaves.map((leaf) => (
               <div
                 key={leaf.id}
-                className="absolute"
+                className="falling-leaf-node absolute"
                 style={{
                   left: leaf.left,
                   top: leaf.top,
+                  "--desktop-dur": leaf.duration,
+                  "--mobile-dur": leaf.mobileDuration,
                   animation: `${leaf.anim} ${leaf.duration} ease-in-out infinite`,
                   animationDelay: leaf.delay,
                   transform: `scale(${leaf.scale})`,
                   willChange: "transform, opacity",
-                }}
+                } as React.CSSProperties}
               >
-                <FallingLeafSvg className="w-3.5 h-4.5 sm:w-4 sm:h-5 drop-shadow-[0_2px_4px_rgba(250,77,86,0.3)]" />
+                <FallingLeafSvg className="w-1.5 h-2 xs:w-2 xs:h-2.5 sm:w-4 sm:h-5 drop-shadow-[0_1px_2px_rgba(250,77,86,0.25)] sm:drop-shadow-[0_2px_4px_rgba(250,77,86,0.3)]" />
               </div>
             ))}
           </div>
 
-          {/* Left Content Column (Clean Minimalist: Eyebrow, CORE SKILLS, and Description) */}
-          <div className="absolute top-6 sm:top-10 lg:top-16 left-2 sm:left-4 lg:left-6 z-30 max-w-[210px] sm:max-w-[240px] lg:max-w-[270px]">
+          {/* Desktop Left Content Column (Overlay on >= md screens only) */}
+          <div className="hidden md:block absolute top-6 sm:top-10 lg:top-16 left-2 sm:left-4 lg:left-6 z-30 max-w-[210px] sm:max-w-[240px] lg:max-w-[270px]">
             
             {/* Eyebrow */}
             <RevealAnimation>
@@ -461,7 +512,7 @@ export default function SkillsSection() {
 
             {/* Description Paragraph */}
             <RevealAnimation delay={0.2}>
-              <p className="font-serif italic text-[#1e293b] text-xs sm:text-[13px] leading-relaxed max-w-[210px] sm:max-w-[250px]">
+              <p className="font-serif italic text-[#64748b] text-xs sm:text-[13px] leading-relaxed max-w-[210px] sm:max-w-[250px]">
                 A strong foundation of modern technologies, enabling me to build scalable, high-performance and user-friendly digital solutions.
               </p>
             </RevealAnimation>
@@ -480,11 +531,12 @@ export default function SkillsSection() {
                   top: `${skill.y}%`,
                   transform: "translate(-50%, -50%)",
                 }}
+                onClick={() => setActiveSkill(activeSkill === skill.id ? null : skill.id)}
                 onMouseEnter={() => setActiveSkill(skill.id)}
                 onMouseLeave={() => setActiveSkill(null)}
               >
                 {/* Fixed-size circular anchor box keeping the orb centered precisely on skill.x, skill.y */}
-                <div className="relative w-11 h-11 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px]">
+                <div className="relative w-8 h-8 sm:w-11 sm:h-11 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px]">
                   
                   {/* Compound Silhouette: Orb is stationary at left-0, tray slides out smoothly to the right */}
                   <div
@@ -494,43 +546,43 @@ export default function SkillsSection() {
                   >
                     {/* 1. Left: Circular Glowing Neon Medallion Orb */}
                     <div
-                      className="relative z-20 w-11 h-11 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
+                      className="relative z-20 w-8 h-8 sm:w-11 sm:h-11 md:w-[50px] md:h-[50px] lg:w-[54px] lg:h-[54px] rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
                       style={{
                         background: skill.orbBg,
-                        border: `2px solid ${skill.borderColor}`,
+                        border: `1.5px solid ${skill.borderColor}`,
                         boxShadow: isHovered
-                          ? `0 0 20px ${skill.glow}, 0 0 40px ${skill.glow}80, inset 0 0 10px ${skill.glow}90`
+                          ? `0 0 16px ${skill.glow}, 0 0 32px ${skill.glow}80, inset 0 0 8px ${skill.glow}90`
                           : skill.glowShadow,
                       }}
                     >
-                      <div className="relative z-10 transition-transform duration-300 group-hover:scale-110 flex items-center justify-center">
+                      <div className="relative z-10 scale-[0.72] sm:scale-100 transition-transform duration-300 group-hover:scale-110 flex items-center justify-center">
                         {skill.icon}
                       </div>
                     </div>
 
-                    {/* 2. Right: Attached Slimmer Dark Glassmorphic Text Tray (Hidden by default, smoothly expands on hover) */}
+                    {/* 2. Right: Attached Slimmer Dark Glassmorphic Text Tray (Hidden by default, smoothly expands on hover/tap) */}
                     <div
-                      className={`-ml-3.5 sm:-ml-4 md:-ml-5 relative z-10 h-[30px] sm:h-[34px] md:h-[38px] lg:h-[42px] flex flex-col justify-center text-left rounded-r-full overflow-hidden transition-all duration-300 ease-out whitespace-nowrap ${
+                      className={`-ml-2.5 sm:-ml-4 md:-ml-5 relative z-10 h-[26px] sm:h-[34px] md:h-[38px] lg:h-[42px] flex flex-col justify-center text-left rounded-r-full overflow-hidden transition-all duration-300 ease-out whitespace-nowrap ${
                         isHovered
-                          ? "max-w-[220px] opacity-100 pl-5 sm:pl-6 md:pl-6.5 pr-3.5 sm:pr-4"
+                          ? "max-w-[170px] sm:max-w-[220px] opacity-100 pl-4 sm:pl-6 md:pl-6.5 pr-3 sm:pr-4"
                           : "max-w-0 opacity-0 pl-0 pr-0 pointer-events-none group-hover:max-w-[220px] group-hover:opacity-100 group-hover:pl-5 group-hover:sm:pl-6 group-hover:md:pl-6.5 group-hover:pr-3.5 group-hover:sm:pr-4 group-hover:pointer-events-auto"
                       }`}
                       style={{
                         background: "rgba(10, 14, 22, 0.94)",
                         backdropFilter: "blur(12px)",
-                        borderRight: `2px solid ${skill.borderColor}`,
-                        borderTop: `2px solid ${skill.borderColor}`,
-                        borderBottom: `2px solid ${skill.borderColor}`,
+                        borderRight: `1.5px solid ${skill.borderColor}`,
+                        borderTop: `1.5px solid ${skill.borderColor}`,
+                        borderBottom: `1.5px solid ${skill.borderColor}`,
                         boxShadow: `0 0 18px ${skill.glow}40, 0 8px 24px rgba(0, 0, 0, 0.5)`,
                       }}
                     >
                       <span
-                        className="font-heading font-black text-[10.5px] sm:text-[12px] md:text-[13px] tracking-tight leading-none whitespace-nowrap transition-colors"
+                        className="font-heading font-black text-[9px] sm:text-[12px] md:text-[13px] tracking-tight leading-none whitespace-nowrap transition-colors"
                         style={{ color: skill.glow }}
                       >
                         {skill.label}
                       </span>
-                      <span className="font-sans text-[7px] sm:text-[8px] md:text-[9px] text-[#cbd5e1] font-medium leading-none mt-1 whitespace-nowrap">
+                      <span className="font-sans text-[6px] sm:text-[8px] md:text-[9px] text-[#cbd5e1] font-medium leading-none mt-0.5 sm:mt-1 whitespace-nowrap">
                         {skill.desc}
                       </span>
                     </div>
@@ -540,6 +592,7 @@ export default function SkillsSection() {
               </div>
             );
           })}
+          </div>
         </div>
 
       </div>

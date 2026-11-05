@@ -184,6 +184,16 @@ function ServiceCardOverlay({
   );
 }
 
+/**
+ * Services Section Component.
+ *
+ * Comprehensive interactive service showcase featuring:
+ * - Category filter tabs (Development, UI/UX, E-Commerce, Solutions).
+ * - Real-time keyword search and technology pill multi-filtering.
+ * - Alphabetical sorting and reset capability.
+ * - Dual view modes: Interactive slider carousel and detailed responsive cards.
+ * - Dynamic color gradients per service topic.
+ */
 export default function ServicesSection() {
   const [activeFilter, setActiveFilter] = useState("All Services");
   const [searchQuery, setSearchQuery] = useState("");
@@ -535,9 +545,9 @@ export default function ServicesSection() {
               </h2>
             </RevealAnimation>
 
-            {/* Description Paragraph with left vertical divider line */}
+            {/* Description Paragraph (Left vertical line removed on mobile, kept on sm+) */}
             <RevealAnimation delay={0.05}>
-              <div className="max-w-[320px] sm:max-w-[340px] md:max-w-[380px] border-l-2 border-[#e2e2da] pl-3.5 py-0.5 text-[#1e293b] font-serif italic text-xs sm:text-[13px] leading-relaxed">
+              <div className="max-w-[320px] sm:max-w-[340px] md:max-w-[380px] border-l-0 sm:border-l-2 border-[#e2e2da] pl-0 sm:pl-3.5 py-0.5 text-[#64748b] font-serif italic text-xs sm:text-[13px] leading-relaxed">
                 Comprehensive web development, modern UI/UX design, and digital solutions crafted with precision and passion.
               </div>
             </RevealAnimation>
@@ -610,7 +620,7 @@ export default function ServicesSection() {
 
             {/* Floating Filter & Sort Dropdown Panel */}
             {isFilterMenuOpen && (
-              <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 bg-white border border-[#e2e2da] rounded-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.15)] p-4 sm:p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
+              <div className="absolute right-0 top-full mt-2 w-[calc(100vw-2rem)] max-w-[320px] sm:w-80 bg-white border border-[#e2e2da] rounded-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.15)] p-4 sm:p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
                 
                 {/* Header */}
                 <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#f1f5f9]">

@@ -3,6 +3,15 @@ import { projects } from "@/data/projects";
 import { educationSlides } from "@/data/education";
 import { articlesData } from "@/data/articles";
 
+/**
+ * Dynamic XML Sitemap Generator (Next.js Metadata Route).
+ *
+ * Dynamically constructs a search-engine crawlable XML sitemap index combining:
+ * - Core static routes (home, privacy policy, terms of service, HTML sitemap).
+ * - Dynamic interactive project live preview routes (/preview/[id]).
+ * - Dynamic education credential detail routes (/education/[id]).
+ * - Dynamic technical article publication routes (/blog/[slug]).
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sachinsharma.dev";
 

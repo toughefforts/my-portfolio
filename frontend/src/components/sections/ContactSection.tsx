@@ -22,6 +22,15 @@ import {
   InstagramIcon,
 } from "@/components/ui/BrandIcons";
 
+/**
+ * Contact Section Component.
+ *
+ * Inquiry dispatch and communication terminal featuring:
+ * - Real-time form validation and error/success feedback states.
+ * - Integration with Next.js edge route handler delivering automated Nodemailer SMTP emails.
+ * - Interactive world map visualization displaying global availability.
+ * - Social network links and security guarantee badges.
+ */
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -111,8 +120,8 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Description Paragraph with left vertical divider line */}
-              <div className="max-w-[240px] sm:max-w-[210px] md:max-w-[230px] lg:max-w-[250px] border-l-2 border-[#e2e8da] pl-3.5 py-0.5 text-[#1e293b] font-serif italic text-xs sm:text-[13px] leading-relaxed shrink-0 ml-auto sm:ml-4 lg:ml-6">
+              {/* Description Paragraph (Left vertical line removed on mobile, kept on sm+) */}
+              <div className="w-full sm:w-auto max-w-full sm:max-w-[210px] md:max-w-[230px] lg:max-w-[250px] border-l-0 sm:border-l-2 border-[#e2e2da] pl-0 sm:pl-3.5 py-0.5 text-[#64748b] font-serif italic text-xs sm:text-[13px] leading-relaxed shrink-0 ml-0 sm:ml-4 lg:ml-6">
                 Have a project in mind, a question, or just want to say hello? I&apos;d love to
                 hear from you. Let&apos;s discuss how we can turn your ideas into reality.
               </div>

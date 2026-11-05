@@ -38,6 +38,13 @@ const navItems = [
   { label: "Contact", href: "/contact", icon: Send },
 ];
 
+/**
+ * Modern Editorial Portfolio Footer.
+ *
+ * Renders an expansive mountain landscape silhouette, interactive origami paper plane card,
+ * direct contact credentials, social media links, quick section navigation links,
+ * legal compliance links (Privacy Policy, Terms of Service, Sitemap), and a return-to-top button.
+ */
 export default function Footer() {
   const pathname = usePathname();
   const scrollToTop = () => {
@@ -69,8 +76,8 @@ export default function Footer() {
         {/* Soft atmospheric left corner glow */}
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#fa4d56]/5 rounded-full blur-3xl" />
 
-        {/* Top-Right Red Corner Shape & Light Wash (behind Let's Connect card area) */}
-        <div className="absolute top-0 right-0 w-[420px] sm:w-[520px] h-[380px] sm:h-[440px] pointer-events-none select-none overflow-hidden">
+        {/* Top-Right Red Corner Shape & Light Wash (behind Let's Connect card area - hidden on mobile) */}
+        <div className="hidden md:block absolute top-0 right-0 w-[420px] sm:w-[520px] h-[380px] sm:h-[440px] pointer-events-none select-none overflow-hidden">
           <svg
             className="absolute top-0 right-0 w-full h-full"
             viewBox="0 0 520 440"
@@ -107,6 +114,7 @@ export default function Footer() {
             alt="Mountain scenery"
             width={1200}
             height={480}
+            style={{ width: "100%", height: "auto" }}
             className="w-full h-auto object-contain object-left-bottom opacity-95 mix-blend-multiply"
             priority
           />
@@ -114,7 +122,7 @@ export default function Footer() {
       </div>
 
       {/* ================= MAIN FOOTER CONTENT ================= */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 sm:pb-7 lg:pb-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-28 sm:pb-7 lg:pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
           {/* ----------------- COLUMN 1: BRAND / BIO ----------------- */}
           <div className="lg:col-span-4 space-y-4">
@@ -214,120 +222,124 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ----------------- COLUMN 2: QUICK LINKS ----------------- */}
-          <div className="lg:col-span-2 space-y-3">
-            <div>
-              <h3 className="font-bold text-[15px] sm:text-base text-[#090d15] tracking-tight">
-                Quick Links
-              </h3>
-              <div className="w-6 h-[2.5px] bg-[#fa4d56] rounded-full mt-1.5" />
+          {/* MOBILE 2-COL ROW (Quick Links Left, Get In Touch Right) / DESKTOP DIRECT GRID ITEMS */}
+          <div className="grid grid-cols-12 gap-4 sm:gap-6 lg:contents">
+            {/* ----------------- COLUMN 2: QUICK LINKS ----------------- */}
+            <div className="col-span-5 sm:col-span-4 lg:col-span-2 space-y-3">
+              <div>
+                <h3 className="font-bold text-[15px] sm:text-base text-[#090d15] tracking-tight">
+                  Quick Links
+                </h3>
+                <div className="w-6 h-[2.5px] bg-[#fa4d56] rounded-full mt-1.5" />
+              </div>
+
+              <ul className="space-y-1.5 pt-1 font-sans text-xs sm:text-[13px]">
+                {navItems.map((item) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        onClick={(e) => handleNavClick(e, item.href)}
+                        className="group flex items-center gap-2 py-1 text-[#475569] hover:text-[#fa4d56] transition-colors cursor-pointer"
+                      >
+                        <IconComponent className="w-3.5 h-3.5 text-[#64748b] group-hover:text-[#fa4d56] transition-colors shrink-0" />
+                        <span className="font-medium group-hover:translate-x-1 transition-transform">{item.label}</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
 
-            <ul className="space-y-1.5 pt-1 font-sans text-xs sm:text-[13px]">
-              {navItems.map((item) => {
-                const IconComponent = item.icon;
-                return (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      onClick={(e) => handleNavClick(e, item.href)}
-                      className="group flex items-center gap-2.5 py-1 text-[#475569] hover:text-[#fa4d56] transition-colors cursor-pointer"
-                    >
-                      <IconComponent className="w-3.5 h-3.5 text-[#64748b] group-hover:text-[#fa4d56] transition-colors" />
-                      <span className="font-medium group-hover:translate-x-1 transition-transform">{item.label}</span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          {/* ----------------- COLUMN 3: GET IN TOUCH ----------------- */}
-          <div className="lg:col-span-3 lg:-ml-6 space-y-3">
-            <div>
-              <h3 className="font-bold text-[15px] sm:text-base text-[#090d15] tracking-tight">
-                Get In Touch
-              </h3>
-              <div className="w-6 h-[2.5px] bg-[#fa4d56] rounded-full mt-1.5" />
-            </div>
-
-            <div className="space-y-3 pt-1">
-              {/* Location */}
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-xl bg-[#fee2e2]/60 border border-[#fecaca] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xs sm:text-[13px] text-[#090d15]">
-                    Delhi, India
-                  </h4>
-                  <p className="text-[11px] text-[#64748b]">
-                    Available for remote work
-                  </p>
-                </div>
+            {/* ----------------- COLUMN 3: GET IN TOUCH ----------------- */}
+            <div className="col-span-7 sm:col-span-8 lg:col-span-3 lg:-ml-6 space-y-3">
+              <div>
+                <h3 className="font-bold text-[15px] sm:text-base text-[#090d15] tracking-tight">
+                  Get In Touch
+                </h3>
+                <div className="w-6 h-[2.5px] bg-[#fa4d56] rounded-full mt-1.5" />
               </div>
 
-              {/* Email */}
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-xl bg-[#fee2e2]/60 border border-[#fecaca] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <div>
-                  <a
-                    href="mailto:officialsachin9910@gmail.com"
-                    className="font-bold text-xs sm:text-[13px] text-[#090d15] hover:text-[#fa4d56] transition-colors block"
-                  >
-                    officialsachin9910@gmail.com
-                  </a>
-                  <p className="text-[11px] text-[#64748b]">Drop me an email</p>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-xl bg-[#fee2e2]/60 border border-[#fecaca] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div>
-                  <a
-                    href="tel:+918810227281"
-                    className="font-bold text-xs sm:text-[13px] text-[#090d15] hover:text-[#fa4d56] transition-colors block"
-                  >
-                    +91 88102 27281
-                  </a>
-                  <p className="text-[11px] text-[#64748b]">
-                    Mon - Sat, 9AM - 6PM
-                  </p>
-                </div>
-              </div>
-
-              {/* Status Indicator / Opportunities Link */}
-              <a
-                href="/contact"
-                onClick={scrollToContact}
-                aria-label="Open to exciting opportunities - Contact me"
-                className="pt-3 border-t border-[#e2e8f0] flex items-center justify-between group cursor-pointer transition-all"
-              >
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#fa4d56] animate-pulse shrink-0 shadow-xs" />
-                  <div>
-                    <span className="block font-bold text-[11px] text-[#090d15] group-hover:text-[#fa4d56] transition-colors">
-                      Open to exciting opportunities
-                    </span>
-                    <span className="block text-[9px] font-mono uppercase tracking-wider text-[#64748b] group-hover:text-[#090d15] transition-colors">
-                      LET&apos;S CREATE SOMETHING AMAZING
-                    </span>
+              <div className="space-y-3 pt-1">
+                {/* Location */}
+                <div className="flex items-start gap-2.5 sm:gap-3">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-[#fee2e2]/60 border border-[#fecaca] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-xs sm:text-[13px] text-[#090d15] truncate">
+                      Delhi, India
+                    </h4>
+                    <p className="text-[10.5px] sm:text-[11px] text-[#64748b] truncate">
+                      Available for remote work
+                    </p>
                   </div>
                 </div>
-                <div className="w-6 h-6 rounded-full bg-white border border-[#e2e8f0] group-hover:border-[#fa4d56] group-hover:bg-[#fa4d56] flex items-center justify-center transition-all text-[#94a3b8] group-hover:text-white shadow-xs">
-                  <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:-rotate-45" />
+
+                {/* Email */}
+                <div className="flex items-start gap-2.5 sm:gap-3">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-[#fee2e2]/60 border border-[#fecaca] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                    <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <a
+                      href="mailto:officialsachin9910@gmail.com"
+                      className="font-bold text-[11px] sm:text-xs lg:text-[13px] text-[#090d15] hover:text-[#fa4d56] transition-colors block truncate"
+                      title="officialsachin9910@gmail.com"
+                    >
+                      officialsachin9910@gmail.com
+                    </a>
+                    <p className="text-[10.5px] sm:text-[11px] text-[#64748b]">Drop me an email</p>
+                  </div>
                 </div>
-              </a>
+
+                {/* Phone */}
+                <div className="flex items-start gap-2.5 sm:gap-3">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-[#fee2e2]/60 border border-[#fecaca] text-[#fa4d56] flex items-center justify-center shrink-0 mt-0.5">
+                    <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <a
+                      href="tel:+918810227281"
+                      className="font-bold text-xs sm:text-[13px] text-[#090d15] hover:text-[#fa4d56] transition-colors block"
+                    >
+                      +91 88102 27281
+                    </a>
+                    <p className="text-[10.5px] sm:text-[11px] text-[#64748b]">
+                      Mon - Sat, 9AM - 6PM
+                    </p>
+                  </div>
+                </div>
+
+                {/* Status Indicator / Opportunities Link */}
+                <a
+                  href="/contact"
+                  onClick={scrollToContact}
+                  aria-label="Open to exciting opportunities - Contact me"
+                  className="pt-2.5 sm:pt-3 border-t border-[#e2e8f0] flex items-center justify-between group cursor-pointer transition-all"
+                >
+                  <div className="flex items-center gap-2 min-w-0 pr-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#fa4d56] animate-pulse shrink-0 shadow-xs" />
+                    <div className="min-w-0">
+                      <span className="block font-bold text-[10.5px] sm:text-[11px] text-[#090d15] group-hover:text-[#fa4d56] transition-colors truncate">
+                        Open to exciting opportunities
+                      </span>
+                      <span className="block text-[8.5px] sm:text-[9px] font-mono uppercase tracking-wider text-[#64748b] group-hover:text-[#090d15] transition-colors truncate">
+                        LET&apos;S CREATE SOMETHING
+                      </span>
+                    </div>
+                  </div>
+                  <div className="w-6 h-6 rounded-full bg-white border border-[#e2e8f0] group-hover:border-[#fa4d56] group-hover:bg-[#fa4d56] flex items-center justify-center transition-all text-[#94a3b8] group-hover:text-white shadow-xs shrink-0">
+                    <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:-rotate-45" />
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* ----------------- COLUMN 4: LET'S CONNECT CARD ----------------- */}
-          <div className="lg:col-span-3 flex lg:justify-end relative">
+          {/* ----------------- COLUMN 4: LET'S CONNECT CARD (Hidden on mobile screens, visible on md+) ----------------- */}
+          <div className="hidden md:flex lg:col-span-3 lg:justify-end relative">
             {/* Soft Red Shadow / Ambient Glow blooming behind the card to the right */}
             <div className="absolute -top-3 -right-6 w-80 h-80 bg-gradient-to-br from-[#fa4d56]/28 via-[#fa4d56]/15 to-transparent rounded-full blur-3xl pointer-events-none select-none z-0" />
 
@@ -426,25 +438,25 @@ export default function Footer() {
         </div>
 
         {/* Right-Aligned Compact Divider Line & Theme Links at Bottom */}
-        <div className="mt-12 sm:mt-14 lg:mt-16 flex flex-col items-end relative z-10 translate-y-3.5 sm:translate-y-4.5">
-          <div className="w-full max-w-[320px] sm:max-w-[380px] border-t border-[#e2e8f0] pt-2.5 pb-1 flex items-center justify-center gap-2.5 sm:gap-3.5 text-[#64748b]">
+        <div className="absolute right-2.5 xs:right-4 bottom-2.5 sm:static sm:right-auto sm:bottom-auto sm:mt-14 lg:mt-16 flex flex-col items-end z-20 sm:translate-y-3.5 sm:translate-y-4.5">
+          <div className="w-fit sm:w-full sm:max-w-[380px] bg-white/95 backdrop-blur-md sm:bg-transparent sm:backdrop-blur-none border border-[#e2e2da] sm:border-0 sm:border-t sm:border-[#e2e8f0] rounded-full sm:rounded-none shadow-sm sm:shadow-none px-3 xs:px-3.5 py-1.5 sm:px-0 sm:pt-2.5 sm:pb-1 flex items-center justify-center gap-2 xs:gap-2.5 sm:gap-3.5">
             <Link
               href="/privacy-policy"
-              className="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-wider font-semibold hover:text-[#fa4d56] transition-colors"
+              className="font-sans font-semibold text-[10px] xs:text-[10.5px] tracking-wide text-[#334155] sm:font-mono sm:text-[10px] sm:text-[10.5px] sm:uppercase sm:tracking-wider sm:font-semibold sm:text-[#64748b] hover:text-[#fa4d56] transition-colors"
             >
               Privacy Policy
             </Link>
-            <span className="text-[#cbd5e1] select-none text-[10px]">|</span>
+            <span className="text-[#94a3b8] sm:text-[#cbd5e1] select-none text-[9.5px] sm:text-[10px]">|</span>
             <Link
               href="/terms-of-service"
-              className="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-wider font-semibold hover:text-[#fa4d56] transition-colors"
+              className="font-sans font-semibold text-[10px] xs:text-[10.5px] tracking-wide text-[#334155] sm:font-mono sm:text-[10px] sm:text-[10.5px] sm:uppercase sm:tracking-wider sm:font-semibold sm:text-[#64748b] hover:text-[#fa4d56] transition-colors"
             >
               Terms of Service
             </Link>
-            <span className="text-[#cbd5e1] select-none text-[10px]">|</span>
+            <span className="text-[#94a3b8] sm:text-[#cbd5e1] select-none text-[9.5px] sm:text-[10px]">|</span>
             <Link
               href="/sitemap"
-              className="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-wider font-semibold hover:text-[#fa4d56] transition-colors"
+              className="font-sans font-semibold text-[10px] xs:text-[10.5px] tracking-wide text-[#334155] sm:font-mono sm:text-[10px] sm:text-[10.5px] sm:uppercase sm:tracking-wider sm:font-semibold sm:text-[#64748b] hover:text-[#fa4d56] transition-colors"
             >
               SiteMap
             </Link>

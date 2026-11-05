@@ -10,6 +10,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/**
+ * Testimonials Section Component.
+ *
+ * Client endorsements & social proof carousel featuring:
+ * - 3D card tilt and scaling transitions with active central focus.
+ * - Star rating badges, client avatars, and verification pills.
+ * - Interactive pagination dots and carousel navigation controls.
+ */
 export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(1); // Default to middle card (Priya Verma)
 
@@ -85,12 +93,29 @@ export default function TestimonialsSection() {
     };
   }, []);
 
+  const touchStartXRef = useRef<number | null>(null);
+
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null) return;
+    const diff = touchStartXRef.current - e.changedTouches[0].clientX;
+    if (diff > 45) {
+      handleNext();
+    } else if (diff < -45) {
+      handlePrev();
+    }
+    touchStartXRef.current = null;
   };
 
   /**
@@ -238,7 +263,7 @@ export default function TestimonialsSection() {
 
             {/* Sub-description with font-serif italic */}
             <RevealAnimation delay={0.08}>
-              <p className="text-xs sm:text-[13px] text-[#1e293b] text-center max-w-lg mx-auto mt-2 font-serif italic leading-relaxed">
+              <p className="text-xs sm:text-[13px] text-[#64748b] text-center max-w-lg mx-auto mt-2 font-serif italic leading-relaxed">
                 Here&apos;s what clients, collaborators, and teammates have to say about working with me.
               </p>
             </RevealAnimation>
@@ -248,20 +273,24 @@ export default function TestimonialsSection() {
         {/* ========================================================
             TESTIMONIALS CARDS (INTERACTIVE 3D EQUAL OVERLAP STACK)
            ======================================================== */}
-        <div className="relative flex items-center justify-center">
+        <div
+          className="relative flex items-center justify-center"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {/* Left Arrow Button */}
           <button
             onClick={handlePrev}
             aria-label="Previous testimonial"
-            className="group absolute -left-2 sm:-left-3.5 lg:-left-5 z-30 w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
+            className="group absolute left-0 sm:-left-3.5 lg:-left-5 z-30 w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
           >
             <ChevronLeft className="w-4 h-4 stroke-[2.5] group-hover:-translate-x-0.5 transition-transform duration-300" />
           </button>
 
-          {/* 3-Card Grid Row (Equal Width, Properly Divided Across Columns, No Overlap) */}
+          {/* 3-Card Grid Row (Desktop: 3 equal cards, Mobile: Active card only with swipe) */}
           <div
             ref={cardsContainerRef}
-            className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-6 lg:gap-7 px-2 sm:px-6"
+            className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-6 lg:gap-7 px-10.5 xs:px-11 sm:px-6"
           >
             {testimonials.map((item, index) => {
               const isActive = activeIndex === index;
@@ -274,14 +303,14 @@ export default function TestimonialsSection() {
                   key={item.id}
                   ref={cardRef}
                   className={`relative h-full pt-3 ${
-                    isActive ? "z-20" : isCenter ? "z-10" : "z-0"
+                    isActive ? "z-20 block" : isCenter ? "z-10 hidden md:block" : "z-0 hidden md:block"
                   }`}
                 >
                   <div
                     onClick={() => setActiveIndex(index)}
-                    className={`relative rounded-[26px] p-6 sm:p-7 flex flex-col justify-between h-full cursor-pointer select-none transition-all duration-150 ease-out active:scale-[0.985] ${
+                    className={`relative rounded-[26px] p-5 xs:p-6 sm:p-7 flex flex-col justify-between h-full cursor-pointer select-none transition-all duration-150 ease-out active:scale-[0.985] ${
                       isActive
-                        ? "bg-gradient-to-br from-[#181c28] via-[#121520] to-[#141724] border border-[#282f44] shadow-[0_22px_50px_-10px_rgba(0,0,0,0.7),0_0_40px_rgba(250,77,86,0.22)] ring-1 ring-[#fa4d56]/35 scale-[1.02]"
+                        ? "bg-gradient-to-br from-[#181c28] via-[#121520] to-[#141724] border border-[#282f44] shadow-[0_22px_50px_-10px_rgba(0,0,0,0.7),0_0_40px_rgba(250,77,86,0.22)] ring-1 ring-[#fa4d56]/35 scale-[1.01] sm:scale-[1.02]"
                         : "bg-white border border-[#e2e2da] shadow-xs hover:border-[#090d15]/30 hover:shadow-md hover:-translate-y-0.5 opacity-90 hover:opacity-100"
                     }`}
                   >
@@ -469,7 +498,7 @@ export default function TestimonialsSection() {
           <button
             onClick={handleNext}
             aria-label="Next testimonial"
-            className="group absolute -right-2 sm:-right-3.5 lg:-right-5 z-30 w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
+            className="group absolute right-0 sm:-right-3.5 lg:-right-5 z-30 w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
           >
             <ChevronRight className="w-4 h-4 stroke-[2.5] group-hover:translate-x-0.5 transition-transform duration-300" />
           </button>

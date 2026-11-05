@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import RevealAnimation from "@/components/animations/RevealAnimation";
@@ -40,7 +40,7 @@ const articlesData: ArticleItem[] = [
     readTime: "8 MIN READ",
     excerpt:
       "Exploring the creative process behind building intuitive and visually stunning user interfaces.",
-    image: "/images/blog/case-study-1.jpg",
+    image: "/images/blogs/blog1/blog1.jpg",
     categoryIcon: "palette",
   },
   {
@@ -52,7 +52,7 @@ const articlesData: ArticleItem[] = [
     readTime: "7 MIN READ",
     excerpt:
       "How reductionist aesthetics and intentional negative space drive user retention and brand authority.",
-    image: "/images/blog/minimalist-design.jpg",
+    image: "/images/blogs/blog2/blog1.jpg",
     categoryIcon: "palette",
   },
   {
@@ -64,7 +64,7 @@ const articlesData: ArticleItem[] = [
     readTime: "5 MIN READ",
     excerpt:
       "Decoding how strategic high-contrast accents and curated dark modes guide cognitive attention.",
-    image: "/images/blog/color-theory.jpg",
+    image: "/images/blogs/blog3/blog1.jpg",
     categoryIcon: "palette",
   },
 
@@ -154,7 +154,7 @@ const articlesData: ArticleItem[] = [
     readTime: "11 MIN READ",
     excerpt:
       "Deconstructing distributed caching, event-driven pipelines, and high-throughput micro-frontends.",
-    image: "/images/blog/case-study-arch.jpg",
+    image: "/images/blogs/blog10/blog1.jpg",
     categoryIcon: "layers",
   },
   {
@@ -191,10 +191,20 @@ const categoryTabs = [
   { id: "ARCHITECTURE", label: "ARCHITECTURE", icon: Layers },
 ] as const;
 
+/**
+ * Blog Section Component.
+ *
+ * Publication feed and technical insight showcase featuring:
+ * - Category tabs (Design, Development, UI/UX, Architecture).
+ * - Interactive carousel slider showcasing featured articles.
+ * - Bookmark toggle state per article card.
+ * - Direct deep links to standalone article reading experiences.
+ */
 export default function BlogSection() {
   const [activeTab, setActiveTab] = useState<string>("ALL");
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>(["design-1"]);
   const [featuredIndex, setFeaturedIndex] = useState<number>(0);
+  const touchStartXRef = useRef<number | null>(null);
 
   // Filter articles based on active category
   const filteredArticles = useMemo(() => {
@@ -260,6 +270,23 @@ export default function BlogSection() {
     setFeaturedIndex(
       (prev) => (prev - 1 + filteredArticles.length) % filteredArticles.length
     );
+  };
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null) return;
+    const diff = touchStartXRef.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    touchStartXRef.current = null;
   };
 
   // Bookmark Toggle
@@ -340,9 +367,9 @@ export default function BlogSection() {
                 </h2>
               </RevealAnimation>
 
-              {/* Description Paragraph with left vertical divider line */}
+              {/* Description Paragraph (Left vertical line removed on mobile, kept on sm+) */}
               <RevealAnimation delay={0.1}>
-                <div className="max-w-[280px] sm:max-w-[260px] md:max-w-[300px] border-l-2 border-[#e2e2da] pl-3.5 py-0.5 text-[#1e293b] font-serif italic text-xs sm:text-[13px] leading-relaxed">
+                <div className="max-w-[280px] sm:max-w-[260px] md:max-w-[300px] border-l-0 sm:border-l-2 border-[#e2e2da] pl-0 sm:pl-3.5 py-0.5 text-[#64748b] font-serif italic text-xs sm:text-[13px] leading-relaxed">
                   In-depth articles, case studies, and technical insights from
                   real projects and hands-on experiences.
                 </div>
@@ -351,13 +378,13 @@ export default function BlogSection() {
           </div>
 
           {/* Right: Filter Category Tabs with Professional Eyebrow Label */}
-          <div className="flex flex-col items-start lg:items-end gap-2 shrink-0">
+          <div className="w-full lg:w-auto flex flex-col items-start lg:items-end gap-2 shrink-0">
             <div className="flex items-center gap-2 font-mono text-[10.5px] font-bold uppercase tracking-widest text-[#7c8ba1]">
               <span>FILTER BY CATEGORY</span>
               <span className="w-5 h-[2px] bg-[#fa4d56] rounded-full inline-block" />
             </div>
 
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+            <div className="w-full max-w-full flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
               {categoryTabs.map((tab) => {
                 const Icon = tab.icon;
                 const isActive = activeTab === tab.id;
@@ -386,6 +413,8 @@ export default function BlogSection() {
         {/* ======================================================== */}
         <div
           key={`${activeTab}-${featuredArticle.id}`}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
           className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-4 transition-all duration-300"
         >
           {/* ==================================================== */}

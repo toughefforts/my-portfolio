@@ -16,6 +16,14 @@ import {
   Plus,
 } from "lucide-react";
 
+/**
+ * Call-To-Action (CTA) Section Component.
+ *
+ * Pre-contact conversion card featuring:
+ * - High-impact editorial headline and service chips.
+ * - Centerpiece 3D illustration asset with hover micro-motion.
+ * - Interactive inquiry trigger steering visitors to the contact form.
+ */
 export default function CtaSection() {
   const [extraAvatars, setExtraAvatars] = useState<string[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -104,7 +112,7 @@ export default function CtaSection() {
                 Available for freelance engineering, high-scale web applications, consulting, and full-time technical roles. Let&apos;s create something meaningful together.
               </p>
 
-              {/* 4 Service / Specialization Chips (Clean 2-Column Grid to avoid truncation) */}
+              {/* 4 Service / Specialization Chips (2-Column Grid: 2 items per row) */}
               <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                 {[
                   { icon: Monitor, line1: "Web", line2: "Applications" },
@@ -164,8 +172,10 @@ export default function CtaSection() {
                 <Image
                   src="/images/cta/create-something-great-together.png"
                   alt="Create Something Great Together"
-                  width={260}
-                  height={302}
+                  width={1164}
+                  height={1351}
+                  sizes="(max-width: 640px) 250px, 270px"
+                  style={{ width: "100%", height: "auto" }}
                   className="w-full h-auto object-contain drop-shadow-[0_16px_34px_rgba(250,77,86,0.15)] pointer-events-none select-none"
                   priority
                 />

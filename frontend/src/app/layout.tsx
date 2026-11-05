@@ -7,6 +7,10 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
+/**
+ * Primary Google Font configurations utilizing CSS variable bindings
+ * for high-performance zero-CLS variable typography.
+ */
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -34,6 +38,9 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+/**
+ * Comprehensive SEO Metadata & OpenGraph configurations.
+ */
 export const metadata: Metadata = {
   title: "Sachin Sharma — Full Stack Web Developer & Software Engineer",
   description:
@@ -58,6 +65,13 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Root Application Layout.
+ *
+ * Wraps every route in global font classes, smooth inertia scrolling (Lenis),
+ * an editorial interactive custom cursor, initial preloader lifecycle,
+ * persistent header navigation, and global footer.
+ */
 export default function RootLayout({
   children,
 }: {
@@ -73,8 +87,13 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-screen flex flex-col bg-[#f8f8f5] text-[#090d15] selection:bg-[#fa4d56] selection:text-white"
       >
+        {/* Interactive Custom Magnetic Cursor */}
         <CustomCursor />
+
+        {/* First-load Session Preloader Animation */}
         <Preloader />
+
+        {/* Inertia Smooth Scrolling Container */}
         <SmoothScroll>
           <Header />
           <main className="flex-1">{children}</main>

@@ -1,3 +1,10 @@
+"""
+Contact Form Submission API Route Handler.
+
+Exposes the HTTP POST /api/contact endpoint to ingest, validate, sanitize, and persist
+inquiries submitted by portfolio visitors, with comprehensive logging and error handling.
+"""
+
 import logging
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
@@ -7,7 +14,7 @@ from app.services.contact_service import ContactService
 
 logger = logging.getLogger(__name__)
 
-router = APIRouter(prefix="/api/contact", tags=["contact"])
+router = APIRouter(prefix="/api/contact", tags=["Contact"])
 
 
 @router.post(
@@ -24,21 +31,21 @@ def create_contact_message(
     db: Session = Depends(get_db),
 ) -> ContactSuccessResponse:
     """
-    Submit a contact form message.
-
-    Validates the input, sanitizes it, and saves to MySQL.
+    Submits a contact form message.
+    
+    Validates input fields, sanitizes extraneous whitespace, persists the inquiry record
+    to the underlying relational database, and logs telemetry for operational visibility.
     """
     try:
-        # Sanitize inputs — strip whitespace
-        contact_data = ContactCreate(
+        # Sanitize incoming text fields by trimming boundary whitespace
+        sanitized_data = ContactCreate(
             name=contact_data.name.strip(),
             email=contact_data.email.strip(),
             message=contact_data.message.strip(),
         )
 
-        message = ContactService.create_message(db, contact_data)
-
-        logger.info(f"New contact message from {message.email} (ID: {message.id})")
+        message = ContactService.create_message(db, sanitized_data)
+        logger.info(f"New contact message received from {message.email} (Record ID: {message.id})")
 
         return ContactSuccessResponse(
             success=True,
@@ -46,7 +53,7 @@ def create_contact_message(
             id=message.id,
         )
     except Exception as e:
-        logger.error(f"Failed to save contact message: {e}")
+        logger.error(f"Failed to persist contact message: {e}", exc_info=True)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Something went wrong. Please try again later.",

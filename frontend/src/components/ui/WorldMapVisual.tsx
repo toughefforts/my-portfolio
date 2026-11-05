@@ -65,6 +65,12 @@ const CONNECTION_PATHS = [
   { target: "Brazil", d: "M 656 191 Q 482 280 308 261" },
 ];
 
+/**
+ * Interactive Dotted World Map Visualization.
+ *
+ * Displays global telecommunication and remote availability, drawing animated dotted SVG
+ * bezier curves originating from Delhi, India to international client hubs with hover tooltips.
+ */
 export default function WorldMapVisual() {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 

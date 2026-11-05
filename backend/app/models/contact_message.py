@@ -1,5 +1,12 @@
+"""
+Contact Message ORM Model Definition.
+
+Represents persisted visitor inquiries received through the portfolio's contact form,
+storing sender identity, indexed email, full text body, read status flag, and UTC timestamps.
+"""
+
 from datetime import datetime
-from sqlalchemy import String, Text, Boolean, DateTime
+from sqlalchemy import Boolean, DateTime, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 from app.core.database import Base
 

@@ -1,9 +1,16 @@
+"""
+Contact Form Validation Schemas and Data Transfer Objects (DTOs).
+
+Defines Pydantic schemas enforcing input validation rules on incoming visitor inquiry payloads
+(length boundaries, email formatting) and standardizing output JSON serialization responses.
+"""
+
 from datetime import datetime
 from pydantic import BaseModel, EmailStr, Field
 
 
 class ContactCreate(BaseModel):
-    """Schema for creating a new contact message."""
+    """Schema for validating a new incoming contact message request payload."""
 
     name: str = Field(..., min_length=2, max_length=100, description="Sender's name")
     email: EmailStr = Field(..., description="Sender's email address")
@@ -13,7 +20,7 @@ class ContactCreate(BaseModel):
 
 
 class ContactResponse(BaseModel):
-    """Schema for contact message response."""
+    """Schema for serializing a stored contact message entity."""
 
     id: int
     name: str
@@ -26,7 +33,7 @@ class ContactResponse(BaseModel):
 
 
 class ContactSuccessResponse(BaseModel):
-    """Schema for successful contact form submission."""
+    """Schema for acknowledging successful receipt of an inquiry."""
 
     success: bool = True
     message: str = "Your message has been sent successfully!"
@@ -34,7 +41,7 @@ class ContactSuccessResponse(BaseModel):
 
 
 class ErrorResponse(BaseModel):
-    """Schema for error responses."""
+    """Standardized error response payload schema."""
 
     success: bool = False
     message: str

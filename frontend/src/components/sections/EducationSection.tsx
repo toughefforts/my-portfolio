@@ -19,11 +19,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/**
+ * Education Section Component.
+ *
+ * Interactive academic journey showcase featuring:
+ * - A 3D isometric laptop mockup with dynamic lid open/close transitions.
+ * - Screen projection displaying coursework screenshots for BCA, ADCE, and Class XII/X.
+ * - Carousel slide navigation with touch-swipe gestures and keyboard navigation.
+ * - Key highlights, credential verification link, and detailed curriculum breakdown.
+ */
 export default function EducationSection() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [isLaptopOpen, setIsLaptopOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const hasAutoOpenedRef = useRef(false);
+  const touchStartXRef = useRef<number | null>(null);
 
   const slide = educationSlides[activeSlideIndex];
 
@@ -72,6 +82,23 @@ export default function EducationSection() {
     );
   };
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null) return;
+    const diff = touchStartXRef.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    touchStartXRef.current = null;
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -114,7 +141,7 @@ export default function EducationSection() {
 
             {/* Narrative Paragraph */}
             <RevealAnimation delay={0.08}>
-              <p className="font-serif italic text-[#1e293b] text-xs sm:text-[13px] leading-relaxed max-w-[290px]">
+              <p className="font-serif italic text-[#64748b] text-xs sm:text-[13px] leading-relaxed max-w-[290px]">
                 A journey of continuous learning, curiosity and self-improvement. Each qualification has added a new perspective and helped me build the person I am today.
               </p>
             </RevealAnimation>
@@ -125,7 +152,11 @@ export default function EducationSection() {
               CENTER COLUMN (w-full lg:w-[54%] xl:w-[56%]):
               Interactive 3D Opening / Closing Laptop on Stone Pedestal
              ======================================================== */}
-          <div className="w-full lg:w-[54%] xl:w-[56%] flex flex-col items-center justify-center py-2 relative">
+          <div
+            className="w-full lg:w-[54%] xl:w-[56%] flex flex-col items-center justify-center py-2 relative"
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          >
             
             {/* Outer Laptop Container with 3D Perspective */}
             <div
@@ -195,23 +226,23 @@ export default function EducationSection() {
                 />
               </div>
 
-              {/* Floating Interactive Chevron Buttons (Positioned close to laptop screen) */}
+              {/* Floating Interactive Chevron Buttons */}
               <button
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous Qualification"
-                className="group absolute left-1 sm:left-2 md:left-3 top-[42%] -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
+                className="group absolute -left-1 xs:left-0.5 sm:left-2 md:left-3 top-[42%] -translate-y-1/2 z-30 w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
               >
-                <ChevronLeft className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[2.5] group-hover:-translate-x-0.5 transition-transform duration-300" />
+                <ChevronLeft className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 stroke-[2.5] group-hover:-translate-x-0.5 transition-transform duration-300" />
               </button>
 
               <button
                 type="button"
                 onClick={handleNext}
                 aria-label="Next Qualification"
-                className="group absolute right-1 sm:right-2 md:right-3 top-[42%] -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
+                className="group absolute -right-1 xs:right-0.5 sm:right-2 md:right-3 top-[42%] -translate-y-1/2 z-30 w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-[#fa4d56] text-[#090d15] hover:text-white border border-[#e2e2da] hover:border-[#fa4d56] shadow-[0_8px_24px_rgba(9,13,21,0.08)] hover:shadow-[0_12px_28px_rgba(250,77,86,0.3)] hover:ring-4 hover:ring-[#fa4d56]/20 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110 active:scale-90 backdrop-blur-sm"
               >
-                <ChevronRight className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[2.5] group-hover:translate-x-0.5 transition-transform duration-300" />
+                <ChevronRight className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 stroke-[2.5] group-hover:translate-x-0.5 transition-transform duration-300" />
               </button>
 
             </div>

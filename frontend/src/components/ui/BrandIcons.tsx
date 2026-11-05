@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * Scalable Vector Graphic (SVG) Brand Identity Icons.
+ * Provides crisp vector representations for GitHub, LinkedIn, Twitter/X, and Instagram.
+ */
+
 export function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg
@@ -50,16 +55,23 @@ export function InstagramIcon({
     <svg
       role="img"
       viewBox="0 0 24 24"
-      fill={useGradient ? "url(#instagram-brand-gradient)" : "currentColor"}
+      fill={useGradient ? "url(#instagram-gradient)" : "currentColor"}
       className={className}
     >
       {useGradient && (
         <defs>
-          <linearGradient id="instagram-brand-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#f09433" />
-            <stop offset="30%" stopColor="#e6683c" />
-            <stop offset="60%" stopColor="#dc2743" />
-            <stop offset="100%" stopColor="#bc1888" />
+          <linearGradient
+            id="instagram-gradient"
+            x1="0%"
+            y1="100%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" stopColor="#fdf497" />
+            <stop offset="5%" stopColor="#fdf497" />
+            <stop offset="45%" stopColor="#fd5949" />
+            <stop offset="60%" stopColor="#d6249f" />
+            <stop offset="90%" stopColor="#285AEB" />
           </linearGradient>
         </defs>
       )}

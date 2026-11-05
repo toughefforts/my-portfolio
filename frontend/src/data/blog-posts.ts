@@ -1,5 +1,9 @@
 import type { BlogPost } from "@/types";
 
+/**
+ * Standardized blog post metadata items.
+ * Maps article overview information for landing cards and category listings.
+ */
 export const blogPosts: BlogPost[] = [
   // ================= DESIGN =================
   {
@@ -7,7 +11,7 @@ export const blogPosts: BlogPost[] = [
     title: "Design Unraveled: Behind the Scenes of UI/UX Magic",
     category: "Design",
     date: "25 July 2024",
-    image: "/images/blog/case-study-1.jpg",
+    image: "/images/blogs/blog1/blog1.jpg",
     excerpt:
       "Exploring the creative process behind building intuitive and visually stunning user interfaces.",
     slug: "design-unraveled-uiux-magic",
@@ -17,7 +21,7 @@ export const blogPosts: BlogPost[] = [
     title: "Minimalist Systems: Crafting Timeless Digital Identities",
     category: "Design",
     date: "14 August 2024",
-    image: "/images/services/landing-page.jpg",
+    image: "/images/blogs/blog2/blog1.jpg",
     excerpt:
       "How reductionist aesthetics and intentional negative space drive user retention and brand authority.",
     slug: "minimalist-systems-timeless-identities",
@@ -27,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     title: "Color Theory: Psychology Behind High-Contrast Palettes",
     category: "Design",
     date: "28 August 2024",
-    image: "/images/services/responsive-design.jpg",
+    image: "/images/blogs/blog3/blog1.jpg",
     excerpt:
       "Decoding how strategic high-contrast accents and curated dark modes guide cognitive attention.",
     slug: "color-theory-high-contrast-palettes",
@@ -39,7 +43,7 @@ export const blogPosts: BlogPost[] = [
     title: "Beyond Aesthetics: Crafting Intuitive UX",
     category: "Development",
     date: "18 July 2024",
-    image: "/images/blog/case-study-2.jpg",
+    image: "/images/blogs/blog4/blog1.jpg",
     excerpt:
       "How modern software engineering combines design principles with functional code architecture.",
     slug: "beyond-aesthetics-crafting-intuitive-ux",
@@ -71,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     title: "Pixels & Insights: Unveiling the Art of UI/UX",
     category: "UI/UX",
     date: "12 July 2024",
-    image: "/images/blog/case-study-3.jpg",
+    image: "/images/blogs/blog7/blog1.jpg",
     excerpt:
       "A deep dive into design systems, typography scales, and scalable component frameworks.",
     slug: "pixels-insights-art-of-uiux",
@@ -91,7 +95,7 @@ export const blogPosts: BlogPost[] = [
     title: "Accessibility First: Designing Experiences for Everyone",
     category: "UI/UX",
     date: "16 August 2024",
-    image: "/images/projects/aichatbot-preview.jpg",
+    image: "/images/projects/aichatbot-card.png",
     excerpt:
       "Achieving WCAG AAA compliance without sacrificing high-end typography and immersive visual polish.",
     slug: "accessibility-first-designing-experiences",
@@ -103,7 +107,7 @@ export const blogPosts: BlogPost[] = [
     title: "System Scalability: Architecting Resilient Web Platforms",
     category: "Architecture",
     date: "10 July 2024",
-    image: "/images/blog/case-study-arch.jpg",
+    image: "/images/blogs/blog10/blog1.jpg",
     excerpt:
       "Deconstructing distributed caching, event-driven pipelines, and high-throughput micro-frontends.",
     slug: "system-scalability-resilient-platforms",
@@ -113,7 +117,7 @@ export const blogPosts: BlogPost[] = [
     title: "State Orchestration: Concurrency Patterns in Client Apps",
     category: "Architecture",
     date: "24 July 2024",
-    image: "/images/projects/taskflow-preview.jpg",
+    image: "/images/projects/fluxly-taskflow-v3.png",
     excerpt:
       "Comparing atomic stores, signal reactive paradigms, and optimistic mutation rollback pipelines.",
     slug: "state-orchestration-concurrency-patterns",
@@ -123,7 +127,7 @@ export const blogPosts: BlogPost[] = [
     title: "Distributed Caching: Zero-Downtime Data Synchronization",
     category: "Architecture",
     date: "11 August 2024",
-    image: "/images/projects/ecommerce-preview.jpg",
+    image: "/images/projects/nectura-ecommerce-final.png",
     excerpt:
       "Designing Redis cache invalidation strategies and edge geo-replication for global low latency.",
     slug: "distributed-caching-zero-downtime",

@@ -73,22 +73,22 @@ export default function ArticleDetailPage({
       ? article.gallery
       : [
           {
-            src: article.image || "/images/blog/case-study-1.jpg",
+            src: article.image || "/images/blogs/blog1/blog1.jpg",
             title: "Primary View",
             step: "01 / 04",
           },
           {
-            src: "/images/blog/case-study-2.jpg",
+            src: "/images/blogs/blog4/blog1.jpg",
             title: "Wireframing",
             step: "02 / 04",
           },
           {
-            src: "/images/blog/case-study-3.jpg",
+            src: "/images/blogs/blog7/blog1.jpg",
             title: "Development",
             step: "03 / 04",
           },
           {
-            src: "/images/blog/case-study-arch.jpg",
+            src: "/images/blogs/blog10/blog1.jpg",
             title: "Final UI",
             step: "04 / 04",
           },
@@ -861,7 +861,7 @@ export default function ArticleDetailPage({
               <span className="text-4xl text-[#fa4d56] font-serif leading-none block mb-1 opacity-80">
                 &ldquo;
               </span>
-              <p className="font-serif italic text-sm text-[#1e293b] leading-relaxed mb-3">
+              <p className="font-serif italic text-sm text-[#64748b] leading-relaxed mb-3">
                 Good design is not just what it looks like, but how it makes people feel.
               </p>
               <div className="font-mono text-[11px] font-bold text-[#7c8ba1] uppercase">
@@ -947,7 +947,7 @@ export default function ArticleDetailPage({
                   <span className="text-4xl text-[#fa4d56] font-serif leading-none block mb-1 opacity-70">
                     &ldquo;
                   </span>
-                  <p className="font-serif italic text-base sm:text-lg text-[#1e293b] leading-relaxed">
+                  <p className="font-serif italic text-base sm:text-lg text-[#64748b] leading-relaxed">
                     True interface sophistication is achieved not when there is nothing left to add, but when <span className="text-[#fa4d56] font-semibold not-italic font-sans">nothing can be taken away</span> without weakening the experience.
                   </p>
                 </motion.blockquote>
@@ -1089,7 +1089,7 @@ export default function ArticleDetailPage({
                   >
                     <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden mb-3 bg-[#0c0e12]">
                       <Image
-                        src={article.comparisonImages?.left?.src || galleryImages[1]?.src || "/images/blog/case-study-2.jpg"}
+                        src={article.comparisonImages?.left?.src || galleryImages[1]?.src || "/images/blogs/blog4/blog1.jpg"}
                         alt={article.comparisonImages?.left?.title || "From Ideas on Paper"}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -1113,7 +1113,7 @@ export default function ArticleDetailPage({
                   >
                     <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden mb-3 bg-[#0c0e12]">
                       <Image
-                        src={article.comparisonImages?.right?.src || galleryImages[2]?.src || "/images/blog/case-study-3.jpg"}
+                        src={article.comparisonImages?.right?.src || galleryImages[2]?.src || "/images/blogs/blog7/blog1.jpg"}
                         alt={article.comparisonImages?.right?.title || "To Pixel-Perfect Execution"}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -1255,7 +1255,7 @@ export default function ArticleDetailPage({
                     className="relative aspect-[16/10] sm:aspect-auto sm:h-full rounded-2xl overflow-hidden border border-[#27272a] bg-[#0c0e12] min-h-[180px] group"
                   >
                     <Image
-                      src={article.processImage?.src || galleryImages[3]?.src || "/images/blog/case-study-arch.jpg"}
+                      src={article.processImage?.src || galleryImages[3]?.src || "/images/blogs/blog10/blog1.jpg"}
                       alt={article.processImage?.caption || "Process Milestone"}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -1552,7 +1552,7 @@ export default function ArticleDetailPage({
                     {/* Thumbnail Image */}
                     <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-[#0c0e12] border border-[#e8e8e3] group-hover:border-[#fa4d56]/50 shadow-xs">
                       <Image
-                        src={prevArticle.image || "/images/blog/case-study-1.jpg"}
+                        src={prevArticle.image || "/images/blogs/blog1/blog1.jpg"}
                         alt={prevArticle.title}
                         fill
                         sizes="(max-width: 640px) 80px, 96px"
@@ -1647,7 +1647,7 @@ export default function ArticleDetailPage({
                     {/* Thumbnail Image (on right) */}
                     <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-[#0c0e12] border border-[#e8e8e3] group-hover:border-[#fa4d56]/50 shadow-xs order-1 sm:order-2">
                       <Image
-                        src={nextArticle.image || "/images/blog/case-study-2.jpg"}
+                        src={nextArticle.image || "/images/blogs/blog4/blog1.jpg"}
                         alt={nextArticle.title}
                         fill
                         sizes="(max-width: 640px) 80px, 96px"

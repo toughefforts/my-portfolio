@@ -34,6 +34,15 @@ const filterCategories = [
   { id: "tools", label: "Tools", icon: Wrench },
 ];
 
+/**
+ * Projects Section Component.
+ *
+ * Full-scale portfolio project showcase featuring:
+ * - Multi-criteria project filtering by category (Web Apps, E-Commerce, AI/ML, Tools).
+ * - Real-time keyword search across project titles, descriptions, and tags.
+ * - Interactive slide-out drawer modals with project deep-dives.
+ * - Direct external links to live interactive previews and GitHub source repositories.
+ */
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("All Projects");
   const [searchQuery, setSearchQuery] = useState("");
@@ -315,9 +324,9 @@ export default function ProjectsSection() {
               </h2>
             </RevealAnimation>
 
-            {/* Description Paragraph with left vertical divider line */}
+            {/* Description Paragraph (Left vertical line removed on mobile, kept on sm+) */}
             <RevealAnimation delay={0.05}>
-              <div className="max-w-[320px] sm:max-w-[340px] md:max-w-[380px] border-l-2 border-[#e2e2da] pl-3.5 py-0.5 text-[#1e293b] font-serif italic text-xs sm:text-[13px] leading-relaxed">
+              <div className="max-w-[320px] sm:max-w-[340px] md:max-w-[380px] border-l-0 sm:border-l-2 border-[#e2e2da] pl-0 sm:pl-3.5 py-0.5 text-[#64748b] font-serif italic text-xs sm:text-[13px] leading-relaxed">
                 A collection of real-world projects showcasing my skills, problem-solving approach, and passion for building impactful digital products.
               </div>
             </RevealAnimation>
@@ -390,7 +399,7 @@ export default function ProjectsSection() {
 
             {/* Floating Filter & Sort Dropdown Panel */}
             {isFilterMenuOpen && (
-              <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 bg-white border border-[#e2e2da] rounded-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.15)] p-4 sm:p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
+              <div className="absolute right-0 top-full mt-2 w-[calc(100vw-2rem)] max-w-[320px] sm:w-80 bg-white border border-[#e2e2da] rounded-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.15)] p-4 sm:p-5 z-50 animate-in fade-in zoom-in-95 duration-150">
                 
                 {/* Header */}
                 <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#f1f5f9]">
@@ -778,7 +787,7 @@ export default function ProjectsSection() {
                         </div>
 
                         {/* Bottom Actions Row: Live Preview + Source Code */}
-                        <div className="pt-3 border-t border-[#f1f5f9] flex items-center justify-between gap-2">
+                        <div className="pt-3 border-t border-[#f1f5f9] flex flex-wrap xs:flex-nowrap items-center justify-between gap-2">
                           {/* Live Preview Button */}
                           <Link
                             href={project.liveUrl}
